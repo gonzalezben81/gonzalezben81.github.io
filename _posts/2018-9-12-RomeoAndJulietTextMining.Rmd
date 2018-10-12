@@ -12,41 +12,49 @@ library(wordcloud)
 library(ggplot2)
 library(biclust)
 library(igraph)
-
+```
 
 ##Set the file path for the documents to be inspected############################################
+
+```r
 actone <- ("C:/Users/stlgonzb/Desktop/texts")   
 actone 
-
+```
 ##Sets the directory to arbitrary name in ()#####################################
+
+```r
 dir(actone) 
+```
 
-
+```r
 library(tm)   
 docs <- Corpus(DirSource(actone))   
-
+```
 ##Summary of the docs object ##########################################################
+```r
 summary(docs)  
 inspect(docs[1])
+```
 
-
-
+```r
 docs <- tm_map(docs, tolower) 
 docs
-
+```
 
 ##Removes the whitespace in the document being inspected##############################
+```r
 docs <- tm_map(docs, stripWhitespace)
-
+```
 
 #fix(docs)
-
+```r
 docs <- tm_map(docs, PlainTextDocument) 
+```
 
-
+```r
 dtm <- DocumentTermMatrix(docs)   
 dtm  
-
+```
 
 ##Finds the frequency of the terms in a text document########################
 findFreqTerms(dtm,10)
