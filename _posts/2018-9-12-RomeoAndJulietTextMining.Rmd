@@ -57,13 +57,16 @@ dtm
 ```
 
 ##Finds the frequency of the terms in a text document########################
+```r
 findFreqTerms(dtm,10)
-
+```
 
 ##Finds term correlations with other terms#########################################
+```r
 findAssocs(dtm, "gun", 0.4)
-
+```
 ##Removes sparse terms from a document#########################################################
+```r
 inspect(removeSparseTerms(dtm, 0.6))
 
 tdm <- TermDocumentMatrix(docs)   
@@ -77,12 +80,14 @@ ord <- order(freq)
 m <- as.matrix(dtm)   
 dim(m)   
 write.csv(m, file="dtm.csv") 
+```
 
-
+```r
 dtms <- removeSparseTerms(dtm, 0.1)    
 inspect(dtms) 
+```
 
-
+```r
 freq[head(ord)] 
 
 freq[tail(ord)]  
@@ -91,8 +96,9 @@ freq[tail(ord)]
 head(table(freq), 20) 
 
 tail(table(freq), 20) 
+```
 
-
+```r
 freq <- colSums(as.matrix(dtms))   
 freq  
 knitr::opts_chunk$set(echo = FALSE)
@@ -100,7 +106,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ##Romeo and Juliet- Word appears 10 times
 
-```{r echo =FALSE,results='hide',message=FALSE}
+```r
 ##Plots the minimum number (frequency) of words in color
 set.seed(142)   
 wordcloud(names(freq), freq, min.freq=10, scale=c(5, .1), colors=brewer.pal(6, "Dark2"))  
@@ -109,28 +115,28 @@ wordcloud(names(freq), freq, min.freq=10, scale=c(5, .1), colors=brewer.pal(6, "
 
 ##Romeo and Juliet- Word appears 30 times
 
-```{r echo=FALSE,results='hide',message=FALSE}
+```r
 set.seed(142)   
 wordcloud(names(freq), freq, min.freq=30, scale=c(5, .1), colors=brewer.pal(6, "Dark2")) 
 ```
 
 ##Romeo and Juliet- Word appears 50 times
 
-```{r}
+```r
 set.seed(142)   
 wordcloud(names(freq), freq, min.freq=50, scale=c(5, .1), colors=brewer.pal(6, "Dark2")) 
 ```
 
 ##Romeo and Juliet- Word appears 75 times
 
-```{r}
+```r
 set.seed(142)   
 wordcloud(names(freq), freq, min.freq=75, scale=c(5, .1), colors=brewer.pal(6, "Dark2")) 
 ```
 
 ##Romeo and Juliet- Word appears 100 times
 
-```{r}
+```r
 set.seed(142)   
 wordcloud(names(freq), freq, min.freq=100, scale=c(5, .1), colors=brewer.pal(6, "Dark2")) 
 ```
