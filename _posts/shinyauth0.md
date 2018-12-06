@@ -20,13 +20,13 @@
 
 
 ### Install Nginx & update the packages
-
+```
     sudo apt-get update
 
     sudo apt-get -y install nginx
 
     sudo nano /etc/nginx/sites-enabled/default
-  
+```  
 
 ### List of nginx commands
 
