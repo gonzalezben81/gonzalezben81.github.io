@@ -86,7 +86,7 @@
     sudo su - -c "R -e \"install.packages('devtools', repos='http://cran.rstudio.com/')\""
     sudo su - -c "R -e \"devtools::install_github('daattali/shinyjs')\""
 
-### Install RStudio Server
+### Install RStudio Server  [Download R-Studio Server](https://www.rstudio.com/products/rstudio/download-server/) if you have not already.
 
     sudo apt-get -y install gdebi-core
 
@@ -95,7 +95,11 @@
     sudo gdebi rstudio-server-1.1.463-amd64.deb
 
 
-### Install Shiny-Server
+### Install Shiny-Server   [Download Shiny-Server](https://www.rstudio.com/products/shiny/download-server/) if you have not already.
+
+     wget https://download3.rstudio.org/ubuntu-14.04/x86_64/shiny-server-1.5.9.923-amd64.deb
+     
+     sudo gdebi shiny-server-1.5.9.923-amd64.deb
 
 
 #### Install the shiny package first
