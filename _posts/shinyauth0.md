@@ -1,17 +1,25 @@
-## Add user to droplet server
+## How to create an authenticated shiny-server using Nginx, auth0, Name Cheap, and Digital Ocean
+
+### SSH into your droplet
+
+### Update the packages for the first time
+
+    sudo apt-get update
+
+### Add user to droplet server
 
     adduser shiny
 
-### Make user a super user with root privileges
+#### Make user a super user with root privileges
 
     gpasswd -a shiny sudo
 
-## Switch user 
+### Switch user 
 
     su - shiny
 
 
-## Install Nginx & update the packages
+### Install Nginx & update the packages
 
     sudo apt-get update
 
@@ -20,31 +28,39 @@
     sudo nano /etc/nginx/sites-enabled/default
   
 
+### List of nginx commands
 
-
-
-## List of nginx commands
-
+### Stop the nginx server
     sudo service nginx stop
+    
+### Start the nginx server
+
     sudo service nginx start
+    
+### Restart the nginx server    
     sudo service nginx restart
 
 
-## Install R
+### Install R
 
-# Add xenial to our sources list
+#### First we need to add xenial to our sources list in our server
 
     sudo sh -c 'echo "deb http://cran.rstudio.com/bin/linux/ubuntu xenial/" >> /etc/apt/sources.list'
 
 
-# Add the public keys
+### Next we need to add the public keys for R
 
       gpg --keyserver keyserver.ubuntu.com --recv-key E084DAB9
       gpg -a --export E084DAB9 | sudo apt-key add -
   
 
-## Install R on our Droplet. 
+### Now we can install R on our Droplet. 
+
+
 ### Install base R and the Dev version of R
+
+
+### Update our packages again
 
     sudo apt-get update
 
@@ -52,7 +68,7 @@
 
 
 
-## Create swap space on server to allow for more room for packages
+### Create swap space on server to allow for more room for packages
 
       sudo /bin/dd if=/dev/zero of=/var/swap.1 bs=1M count=1024
       sudo /sbin/mkswap /var/swap.1
@@ -60,17 +76,17 @@
       sudo sh -c 'echo "/var/swap.1 swap swap defaults 0 0 " >> /etc/fstab'
 
 
-## Install Devtools 
+### Let's install the dependencies for us to use 'devtools' in R 
 
     sudo apt-get -y install libcurl4-gnutls-dev libxml2-dev libssl-dev
 
 
-## Install packages from CRAN and GitHub
+### Install packages from CRAN and GitHub (devtools, shinyjs)
 
     sudo su - -c "R -e \"install.packages('devtools', repos='http://cran.rstudio.com/')\""
     sudo su - -c "R -e \"devtools::install_github('daattali/shinyjs')\""
 
-## Install RStudio Server
+### Install RStudio Server
 
     sudo apt-get -y install gdebi-core
 
@@ -79,14 +95,15 @@
     sudo gdebi rstudio-server-1.1.463-amd64.deb
 
 
-## Install Shiny-Server
+### Install Shiny-Server
 
 
-# Install the shiny package first
+#### Install the shiny package first
+We need to install the shiny package first, this allows us to run the shiny server and our applications
 
     sudo su - -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')\""
 
-## Set Up Permission on Shiny Server
+##### Set Up Permissions on Shiny Server
 
 
     sudo groupadd shiny-apps
@@ -98,18 +115,18 @@
     sudo chmod g+w .
     sudo chmod g+s .
 
-## Install Git 
+### Install Git 
 
     sudo apt-get -y install git
     git config --global user.email "you@example.com"
     git config --global user.name "Your Name"
 
-#Make /srv/shiny-server a git repository
+### Make /srv/shiny-server a git repository
 
     cd /srv/shiny-server
     git init
 
-## Add a git repository to our Shiny Server
+### Add a git repository to our Shiny Server
 
 
     git remote add origin https://github.com/daattali/shiny-server.git
@@ -118,20 +135,20 @@
     git push -u origin master
 
 
-##Have shiny listen on two ports
+### Have shiny listen on two ports
 
     sudo /opt/shiny-server/bin/deploy-example multi-server
 
-# Restart Shiny Server
+### Restart Shiny Server
 
     sudo service shiny-server restart
 
 
-## Awesome urls
+### Create some awesome urls so we do not have to remember port numbers
 
     sudo nano /etc/nginx/sites-enabled/default
 
-#Add the following lines right after the line that reads server_name _;
+### Add the following lines right after the line that reads server_name _;
 
 
     location /shiny/ {
@@ -163,12 +180,14 @@
 
 
 
-## Restart Nginx
+### Restart Nginx for the changes to take effect
 
+    sudo service nginx restart
+    
+    
+### Updated localhost:3000 to reflect your shiny-auth0 configuration file
 
-## Updated localhost:3000 to reflect your shiny-auth0 configuration file
-
-## Add auth0 to the private Shiny-Server
+### Add auth0 to the private Shiny-Server
 
         # auth0 server
         location /private-shiny/ {
@@ -195,7 +214,7 @@
        }
 
 
-## Restart Nginx to make the necessary changes take effect
+### Restart Nginx to make the necessary changes take effect
 
     sudo service nginx restart
 
