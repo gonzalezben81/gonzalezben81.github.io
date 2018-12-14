@@ -5,139 +5,161 @@ date: "June 29, 2016"
 output: html
 ---
 
-```{r setup, include=FALSE}
-library(Rcampdf)
-library(tm)
-library(wordcloud)
-library(ggplot2)
-library(biclust)
-library(igraph)
-```
+### First things first, install the correct libraries in R. 
 
-##Set the file path for the documents to be inspected############################################
+````
+    {r setup, include=FALSE}
+    library(Rcampdf)
+    library(tm)
+    library(wordcloud)
+    library(ggplot2)
+    library(biclust)
+    library(igraph)
+````
+
+### Set the file path for the documents to be inspected############################################
 
 ````
     actone <- ("C:/Users/stlgonzb/Desktop/texts")   
     actone 
 ````
-##Sets the directory to arbitrary name in ()#####################################
+### Sets the directory to arbitrary name in ()#####################################
 
-```r
+```` 
     dir(actone) 
-```
+```` 
 
-```r
-library(tm)   
-docs <- Corpus(DirSource(actone))   
-```
-##Summary of the docs object ##########################################################
-```r
-summary(docs)  
-inspect(docs[1])
-```
+````
+    library(tm)   
+    
+    docs <- Corpus(DirSource(actone))   
+````
+### Summary of the docs object ##########################################################
+````
+    summary(docs)  
+    
+    inspect(docs[1])
+    
+    docs <- tm_map(docs, tolower) 
 
-```r
-docs <- tm_map(docs, tolower) 
-docs
-```
+    docs
+    
+```` 
 
-##Removes the whitespace in the document being inspected##############################
-```r
-docs <- tm_map(docs, stripWhitespace)
-```
+### Removes the whitespace in the document being inspected##############################
+````
+    docs <- tm_map(docs, stripWhitespace)
+````
 
-#fix(docs)
-```r
-docs <- tm_map(docs, PlainTextDocument) 
-```
+### fix(docs)
 
-```r
-dtm <- DocumentTermMatrix(docs)   
-dtm  
-```
+````
+    docs <- tm_map(docs, PlainTextDocument) 
+````
 
-##Finds the frequency of the terms in a text document########################
-```r
-findFreqTerms(dtm,10)
-```
+````
+    dtm <- DocumentTermMatrix(docs)   
+    
+    dtm
+    
+````
 
-##Finds term correlations with other terms#########################################
-```r
-findAssocs(dtm, "gun", 0.4)
-```
-##Removes sparse terms from a document#########################################################
-```r
-inspect(removeSparseTerms(dtm, 0.6))
+### Finds the frequency of the terms in a text document
+````
+    findFreqTerms(dtm,10)
+````
 
-tdm <- TermDocumentMatrix(docs)   
-tdm 
+### Finds term correlations with other terms
+````
+    findAssocs(dtm, "gun", 0.4)
+````
+### Removes sparse terms from a document
 
-freq <- colSums(as.matrix(dtm))   
-length(freq) 
+````
+    inspect(removeSparseTerms(dtm, 0.6))
 
-ord <- order(freq) 
+    tdm <- TermDocumentMatrix(docs)   
+    tdm 
 
-m <- as.matrix(dtm)   
-dim(m)   
-write.csv(m, file="dtm.csv") 
-```
+    freq <- colSums(as.matrix(dtm))   
+    length(freq) 
 
-```r
-dtms <- removeSparseTerms(dtm, 0.1)    
-inspect(dtms) 
-```
+    ord <- order(freq) 
 
-```r
-freq[head(ord)] 
+    m <- as.matrix(dtm)   
+    dim(m)   
+    write.csv(m, file="dtm.csv") 
+    
+````
 
-freq[tail(ord)]  
+````
+    dtms <- removeSparseTerms(dtm, 0.1)    
+    
+    inspect(dtms) 
+````
+
+````
+    freq[head(ord)] 
+
+    freq[tail(ord)]  
 
 
-head(table(freq), 20) 
+    head(table(freq), 20) 
 
-tail(table(freq), 20) 
-```
+    tail(table(freq), 20) 
+    
+````
 
-```r
-freq <- colSums(as.matrix(dtms))   
-freq  
-knitr::opts_chunk$set(echo = FALSE)
-```
+````
+    freq <- colSums(as.matrix(dtms))   
+    
+    freq  
+    
+    knitr::opts_chunk$set(echo = FALSE)
+````
 
-##Romeo and Juliet- Word appears 10 times
+Romeo and Juliet- Word appears 10 times
 
-```r
-##Plots the minimum number (frequency) of words in color
-set.seed(142)   
-wordcloud(names(freq), freq, min.freq=10, scale=c(5, .1), colors=brewer.pal(6, "Dark2"))  
 
-```
+### Plots the minimum number (frequency) of words in color
+````
+    set.seed(142)   
+    wordcloud(names(freq), freq, min.freq=10, scale=c(5, .1), colors=brewer.pal(6, "Dark2"))  
 
-##Romeo and Juliet- Word appears 30 times
+````
 
-```r
-set.seed(142)   
-wordcloud(names(freq), freq, min.freq=30, scale=c(5, .1), colors=brewer.pal(6, "Dark2")) 
-```
+### Romeo and Juliet- Word appears 30 times
 
-##Romeo and Juliet- Word appears 50 times
+````
+    set.seed(142)   
+    
+    wordcloud(names(freq), freq, min.freq=30, scale=c(5, .1), colors=brewer.pal(6, "Dark2")) 
+````
 
-```r
-set.seed(142)   
-wordcloud(names(freq), freq, min.freq=50, scale=c(5, .1), colors=brewer.pal(6, "Dark2")) 
-```
+### Romeo and Juliet- Word appears 50 times
 
-##Romeo and Juliet- Word appears 75 times
+````
+    set.seed(142)   
+    
+    wordcloud(names(freq), freq, min.freq=50, scale=c(5, .1), colors=brewer.pal(6, "Dark2")) 
+    
+````
 
-```r
-set.seed(142)   
-wordcloud(names(freq), freq, min.freq=75, scale=c(5, .1), colors=brewer.pal(6, "Dark2")) 
-```
+### Romeo and Juliet- Word appears 75 times
 
-##Romeo and Juliet- Word appears 100 times
+````
+    set.seed(142)   
+    
+    wordcloud(names(freq), freq, min.freq=75, scale=c(5, .1), colors=brewer.pal(6, "Dark2")) 
+````
 
-```r
-set.seed(142)   
-wordcloud(names(freq), freq, min.freq=100, scale=c(5, .1), colors=brewer.pal(6, "Dark2")) 
-```
+### Romeo and Juliet- Word appears 100 times
+
+````
+
+    set.seed(142)   
+    
+    wordcloud(names(freq), freq, min.freq=100, scale=c(5, .1), colors=brewer.pal(6, "Dark2")) 
+    
+````
 
