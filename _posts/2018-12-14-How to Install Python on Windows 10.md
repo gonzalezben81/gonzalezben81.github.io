@@ -1,5 +1,8 @@
-## How to install Python on Windows 10
-
+---
+title: "How to Install Python on Windows 10"
+author: "Ben Gonzalez"
+date: "December 14 , 2018"
+---
 
 ### Download the version of Python you want to use
 
