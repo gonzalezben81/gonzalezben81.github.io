@@ -12,21 +12,21 @@ My name is Ben Gonzalez. I currently live in the St. Louis, MO area and work wit
     + Master of Education: Adult & Higher Education
     + Master of Arts: Communication
 
-**Shiny Apps:**
+<center>**Shiny Apps:**/center>
 
-<a href = "http://www.rgonzo.us/shiny/apps/textanalysis/" target = "_blank">Text Analysis</a>
+<center><a href = "http://www.rgonzo.us/shiny/apps/textanalysis/" target = "_blank">Text Analysis</a>/center>
 
-<a href = "http://www.rgonzo.us/shiny/apps/homerun/" target = "_blank">Home Run Comparison</a>
+<center><a href = "http://www.rgonzo.us/shiny/apps/homerun/" target = "_blank">Home Run Comparison</a>/center>
 
-<a href = "http://www.rgonzo.us/shiny/apps/illinois/" target = "_blank">Illinois Congressional Map</a>
+<center><a href = "http://www.rgonzo.us/shiny/apps/illinois/" target = "_blank">Illinois Congressional Map</a>/center>
 
-<a href = "http://www.rgonzo.us/shiny/apps/baseballplayer/" target = "_blank">MLB: Player Statistics</a>
+<center><a href = "http://www.rgonzo.us/shiny/apps/baseballplayer/" target = "_blank">MLB: Player Statistics</a>/center>
 
-<a href = "http://www.rgonzo.us/shiny/apps/sql/" target = "_blank">SQL Application</a>
+<center><a href = "http://www.rgonzo.us/shiny/apps/sql/" target = "_blank">SQL Application</a>/center>
 
-<a href = "http://www.rgonzo.us/shiny/apps/statistics/" target = "_blank">Statistical Analysis</a>
+<center><a href = "http://www.rgonzo.us/shiny/apps/statistics/" target = "_blank">Statistical Analysis</a>/center>
 
-<a href = "http://www.rgonzo.us/shiny/apps/webscraper/" target = "_blank">Web Scraper</a>
+<center><a href = "http://www.rgonzo.us/shiny/apps/webscraper/" target = "_blank">Web Scraper</a></center>
 
 
 
