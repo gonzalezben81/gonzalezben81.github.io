@@ -1,8 +1,7 @@
 ---
 title: "Romeo and Juliet"
 author: "Ben Gonzalez"
-date: "June 29, 2016"
-output: html
+date: "December 14 , 2018"
 ---
 
 ### First things first, install the correct libraries in R. 
