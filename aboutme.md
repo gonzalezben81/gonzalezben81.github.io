@@ -14,7 +14,7 @@ My name is Ben Gonzalez. I currently live in the St. Louis, MO area and work wit
 
 **Shiny Apps:**
 
-<a href = "http://www.rgonzo.us/shiny/apps/textanalysis/" target = "_blank">Text Analysis</a>
+<center><a href = "http://www.rgonzo.us/shiny/apps/textanalysis/" target = "_blank">Text Analysis</a></center>
 
 <a href = "http://www.rgonzo.us/shiny/apps/homerun/" target = "_blank">Home Run Comparison</a>
 
