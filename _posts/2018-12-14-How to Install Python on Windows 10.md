@@ -27,8 +27,12 @@ Click the link below and select: **Save Link As**
 
 <a href = "https://bootstrap.pypa.io/get-pip.py" target = "_blank">pip</a>
 
-Next, double click on the link to run the **pip.py** script. 
+Next, double click on the link to run the **pip.py** script to run it. 
 
 ![](/img/pip.png)
+
+This will start the script and install **pip** for us. 
+
+
 
 
