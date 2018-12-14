@@ -12,7 +12,9 @@ My name is Ben Gonzalez. I currently live in the St. Louis, MO area and work wit
     + Master of Education: Adult & Higher Education
     + Master of Arts: Communication
 
-Shiny Apps:
+**Shiny Apps:**
+
+
 
 
 
