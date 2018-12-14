@@ -16,13 +16,13 @@ date: "December 14 , 2018"
     library(igraph)
 ````
 
-### Set the file path for the documents to be inspected############################################
+### Set the file path for the documents to be inspected
 
 ````
     actone <- ("C:/Users/stlgonzb/Desktop/texts")   
     actone 
 ````
-### Sets the directory to arbitrary name in ()#####################################
+### Sets the directory to arbitrary name in ()
 
 ```` 
     dir(actone) 
@@ -33,7 +33,7 @@ date: "December 14 , 2018"
     
     docs <- Corpus(DirSource(actone))   
 ````
-### Summary of the docs object ##########################################################
+### Summary of the docs object
 ````
     summary(docs)  
     
@@ -45,7 +45,7 @@ date: "December 14 , 2018"
     
 ```` 
 
-### Removes the whitespace in the document being inspected##############################
+### Removes the whitespace in the document being inspected
 ````
     docs <- tm_map(docs, stripWhitespace)
 ````
