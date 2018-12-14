@@ -16,14 +16,14 @@ library(igraph)
 
 ##Set the file path for the documents to be inspected############################################
 
-```r
-actone <- ("C:/Users/stlgonzb/Desktop/texts")   
-actone 
-```
+````
+    actone <- ("C:/Users/stlgonzb/Desktop/texts")   
+    actone 
+````
 ##Sets the directory to arbitrary name in ()#####################################
 
 ```r
-dir(actone) 
+    dir(actone) 
 ```
 
 ```r
