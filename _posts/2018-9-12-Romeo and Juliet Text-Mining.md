@@ -3,7 +3,7 @@ layout: post
 title: "Romeo and Juliet"
 author: "Ben Gonzalez"
 date: "December 14 , 2018"
-bigimg: /img/text.png
+bigimg: /img/Text.PNG
 
 ---
 
