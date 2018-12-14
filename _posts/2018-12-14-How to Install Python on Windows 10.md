@@ -29,4 +29,6 @@ Click the link below and select: **Save Link As**
 
 Next, double click on the link to run the **pip.py** script. 
 
+![](/img/get-pip.py.png)
+
 
