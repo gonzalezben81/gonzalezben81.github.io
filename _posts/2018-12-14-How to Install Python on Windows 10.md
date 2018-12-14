@@ -14,6 +14,9 @@ Click the link below to download **Python 2.7** -- this is a version known to be
 
 ### Run the Python executable that you have downloaded. 
 
+In this picture we are installing **Python 3.5**. Notice in the picture that the checkbox is marked to install Python 3.5 to Path. This tells our operating system and installer that we want Python automatically added to the Path. Checking this box will save us the headache of setting Environment Variables later. 
+
+![](/img/python_install.png)
 
 
 
