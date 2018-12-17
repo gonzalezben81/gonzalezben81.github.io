@@ -1,5 +1,5 @@
 ---
-title: "Polygon Map"
+title: "Illinois Congressional Map"
 author: "Ben Gonzalez"
 date: "3/9/2017"
 
