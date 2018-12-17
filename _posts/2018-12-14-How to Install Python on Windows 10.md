@@ -13,7 +13,7 @@ Click the link below to download **Python 3.7** -- this is the current release.
 
 Click the link below to download **Python 2.7** -- this is a version known to be stable across platforms. 
 
-<a href = "https://www.python.org/downloads/release/python-2715/" target = "_blank">Python 3.7</a>
+<a href = "https://www.python.org/downloads/release/python-2715/" target = "_blank">Python 2.7</a>
 
 
 ### Run the Python executable that you have downloaded. 
@@ -27,15 +27,22 @@ In this picture we are installing **Python 3.5**. Notice in the picture that the
 
 ### Install pip
 
-Click the link below and select: **Save Link As**
+Right click the link below and select: **Save Link As**
 
 <a href = "https://bootstrap.pypa.io/get-pip.py" target = "_blank">pip</a>
 
-Next, double click on the link to run the **pip.py** script to run it. 
+Navigate to the folder that you have downloaded the **pip.py** file to. 
+Then double click on the link to run the **pip.py** script to run it. 
 
 ![](/img/pip.png)
 
 This will start the script and install **pip** for us. 
+
+### Check to ensure pip is installed on our system. 
+
++ Open a **cmd** prompt and type **pip**
+
+You should see an image similar to the one below pop up. 
 
 
 
