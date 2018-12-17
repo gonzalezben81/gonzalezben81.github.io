@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Romeo and Juliet"
+title: "Text Mining with R: Romeo and Juliet"
 author: "Ben Gonzalez"
 date: "December 14 , 2018"
 bigimg: /img/Text.PNG
@@ -8,6 +8,15 @@ bigimg: /img/Text.PNG
 ---
 
 ### First things first, install the correct libraries in R. 
+
+
+````
+    packages<-c("Rcampdf","tm","wordcloud","ggplot2","biclust","igraph")
+    install.packages(packages, dependencies = T)
+
+````
+
+### Next we need to load our libraries to use them. 
 
 ````
     {r setup, include=FALSE}
@@ -20,6 +29,7 @@ bigimg: /img/Text.PNG
 ````
 
 ### Set the file path for the documents to be inspected
+We will want to set up the file path one level above where our document is located. This will allow us to pick and choose which **.txt** we would like to use in our text analysis. 
 
 ````
     actone <- ("C:/Users/stlgonzb/Desktop/texts")   
