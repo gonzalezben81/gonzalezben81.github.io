@@ -32,8 +32,6 @@ Census Tiger Files: ftp://ftp2.census.gov/geo/tiger/TIGER2016/
 #### File 2
 
 ````
-    {r,warning=FALSE,message=FALSE}
-
     tmptwo <- tempdir()
 
     url <- "ftp://ftp2.census.gov/geo/tiger/TIGER2016/SLDU/tl_2016_17_sldu.zip"
@@ -48,8 +46,6 @@ Census Tiger Files: ftp://ftp2.census.gov/geo/tiger/TIGER2016/
 #### File 3
 
 ````
-    {r,warning=FALSE,message=FALSE}
-
     tmpthree <- tempdir()
 
     url <- "ftp://ftp2.census.gov/geo/tiger/TIGER2016/COUNTY/tl_2016_us_county.zip"
@@ -69,7 +65,7 @@ Census Tiger Files: ftp://ftp2.census.gov/geo/tiger/TIGER2016/
 Utilize the code below to download the necessary packages to create, merge, and build new datasets. 
 
 ````
-{r,warning=FALSE,message=FALSE}
+
 install.packages(c("rgdal","leaflet","reshape","reshape2","dplyr","RcolorBrewer"),dependencies = TRUE)
 
 
@@ -78,7 +74,7 @@ install.packages(c("rgdal","leaflet","reshape","reshape2","dplyr","RcolorBrewer"
 ### Step 3: Load the libraries into R.
 
 ````
-    {r,warning=FALSE,message=FALSE}
+
     library(rgdal)
     library(leaflet)
     library(reshape)
@@ -103,7 +99,7 @@ We are going to create a generic color palette we can use for our map.
 We are now going to read our shapefiles into R. We wil be using the 'rgdal' package to do so. Our 'dsn' is where the files are stored, and the 'layer' is the name of the file we need to retrieve.
 
 ````
-{r,warning=FALSE,message=FALSE}
+
 ### Illinois Congressional Districts 
 
     houseillower <- readOGR(dsn = tmp,layer = "tl_2016_17_sldl", verbose = FALSE, encoding = "UTF-8")
@@ -118,30 +114,30 @@ We are now going to read our shapefiles into R. We wil be using the 'rgdal' pack
 ### Step 6: Subset our data into dataframes.
 
 We are going to subset our shape files into a data frame. This will allow us to merge our files together with other data. In our case we are going to merge our data with congressional data and census population data as well.
+3
+### Creates dataframe of SpatialPolygonData
 
 ````
-{r,warning=FALSE,message=FALSE}
-## Creates dataframe of SpatialPolygonData
     houseillowerframe <- as.data.frame(houseillower)
     houseilupperframe <- as.data.frame(houseilupper)
     countyilframe<-as.data.frame(countyil)
-```
+    
+````
 
-###Step 7: Read in our csv files
+### Step 7: Read in our csv files
 
 Now lets read in our csv files that have the data on our state congressional members. I retrieved this data from the Illinois statehouse website. I then cleaned up the data a bit before pulling it into R. I retieved this data from: http://www.ilga.gov/
 
 ````
-{r,warning=FALSE,message=FALSE}
-##Reads in CSV
-    illinois_senate <- read.csv("C:/Users/Ben/Desktop/Illinois/illinoisstatesenators.csv",
+
+    illinois_senate <- read.csv("C:/Users/'usernamehere'/Desktop/Illinois/illinoisstatesenators.csv",
                             stringsAsFactors = FALSE)
 
 
-    illinois_house <- read.csv("C:/Users/Ben/Desktop/Illinois/illinoisstatehouse.csv",
+    illinois_house <- read.csv("C:/Users/'usernamehere'/Desktop/Illinois/illinoisstatehouse.csv",
                            stringsAsFactors = FALSE)
 
-    illinoispop<-read.csv("C:/Users/Ben/Desktop/Illinois/CC-EST2015-ALLDATA-17.csv")
+    illinoispop<-read.csv("C:/Users/'usernamehere'/Desktop/Illinois/CC-EST2015-ALLDATA-17.csv")
 
 ````
 
@@ -150,13 +146,13 @@ Now lets read in our csv files that have the data on our state congressional mem
 
 In this step we are going to clean up our data and rename some of the variables. We need to rename the variable names to the same names as those in our dataframe. Once we do this our datasets will have a common variable name we can now merge our data together with. If there is no 'common' variable name our datasets will not merge properly.
 
-````{r,warning=FALSE,message=FALSE}
+````
     illinoispoptotal<-illinoispop[illinoispop$YEAR==1&illinoispop$AGEGRP==0,]
 
-##Rename variables to match data frame for coercion
+## Rename variables to match data frame for coercion
     illinois_senate <- rename(illinois_senate, SLDUST = District)
 
-##Rename variables to match data frame for coercion
+## Rename variables to match data frame for coercion
     illinois_house <- rename(illinois_house,SLDLST = District)
 
     names(countyil)
@@ -176,11 +172,12 @@ Now we will combine our data into a new dataframe using the cbind() function in 
 
 
 ````
-{r,warning=FALSE,message=FALSE}
+
     library(dplyr)
 
 
 ### Can use cbind or left_join to bind the new data to the SpatialPolygonDataFrames
+
     houseilupper@data <- cbind(houseilupper@data, illinois_senate)
 
     houseillower@data <- cbind(houseillower@data, illinois_house)
@@ -192,7 +189,7 @@ In this step we are going to subset our data by political party affiliation. We 
 
 ````
 
-{r,warning=FALSE,message=FALSE}
+
 ## Subsets the data to be used in a map and create grouping variables for overlays ####
     housedemocrats<- subset(houseillower, houseillower$Party %in% c("D"))
 
@@ -209,8 +206,8 @@ In this step we are going to subset our data by political party affiliation. We 
 Here we are going to create some popups for our map. The 'strong' and 'br' statements are html code and help us create a cleaner looking popup. You can utilize a variety of html code in your maps. The '$' sign is used to designate the variable we want to use from each particular dataframe.
 
 ````
-{r,warning=FALSE,message=FALSE}
-##Creates the popups for the datasets 
+
+### Creates the popups for the datasets 
 
     senatedemo_popup <- paste0("<strong>Senator: </strong>", 
                            senatedemocrats$Senator, 
