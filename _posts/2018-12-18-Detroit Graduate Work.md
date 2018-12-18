@@ -56,3 +56,20 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 ----
 
 **Overview:** For the Detroit dataset I have used several modeling techniques (Correlation, Simple Linear Regression, Multiple Linear Regression, Subset Selection, and Generalized Additive Models). The utilization of the plot function helped to determine what variables in the dataset would be significant and those which would not be significant. The correlation function was also used to determine which variables had a high correlation with the outcome variable of homicide. The models were chosen due to the continuous quantitative features of the Detroit dataset. Simple linear regression was utilized and helped to determine the number of predictors in the dataset that would be needed to predict homicide(s) in Detroit . GLM, LDA, QDA, and K-Nearest-Neighbors(KNN) were ignored due to the dataset having continuous variables which would not model well as low or high classification. Lastly the outcome variable is continuous and the above methods are utilized on qualitative outcome variables.
+
+
+|Model|Learning Technique|Variables Used|Correlation|Scale=-1 to 1|
+| -------------         |:-------------:| -----:   |---          |
+|Model 1|Correlation|HOM-FTP|0.964|
+|Model 2|Correlation|HOM-UEMP|0.210|
+|Model 3|Correlation|HOM-MAN|.546|
+|Model 4|Correlation|HOM-LIC|.726|
+|Model 5|Correlation|HOM-GR|0.816|
+|Model 6|Correlation|HOM-CLEAR|-0.968|
+|Model 7|Correlation|HOM-WM|-0.952|
+|Model 8|Correlation|HOM-NMAN|0.955|
+|Model 9|Correlation|HOM-GOV|0.958|
+|Model 10|Correlation|HOM-HE|0.913|
+|Model 11|Correlation|HOM-WE|0.888|
+|Model 12|Correlation|HOM-ACC|-0.204|
+|Model 13|Correlation|HOM-ASR|0.824|
