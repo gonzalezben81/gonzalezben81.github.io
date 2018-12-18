@@ -23,7 +23,7 @@ date: "December 14 , 2018"
 
 
 
-**Introduction: Detroit Dataset**
+<center>**Introduction: Detroit Dataset**</center>
 
 The Detroit dataset is from a book called “Subset selection in Regression”. The original data was collected by J.C. Fisher and used in his paper “Homicide in Detroit: The Role of Firearms”, Criminology, vol.14, 387-400 (1976). The data collected represents homicide data in Detroit from 1961-1973. The data was obtained from http://lib.stat.cmu.edu/datasets/detroit. The following table lists each variable and their descriptions.
 
