@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: page
 title: "Predicting crime in Detroit"
 author: "Ben Gonzalez"
 date: "December 14 , 2018"
