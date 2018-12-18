@@ -25,10 +25,13 @@ date: "December 14 , 2018"
 
 **<center>Introduction: Detroit Dataset</center>**
 
-The Detroit dataset is from a book called “Subset selection in Regression”. The original data was collected by J.C. Fisher and used in his paper “Homicide in Detroit: The Role of Firearms”, Criminology, vol.14, 387-400 (1976). The data collected represents homicide data in Detroit from 1961-1973. The data was obtained from http://lib.stat.cmu.edu/datasets/detroit. The following table lists each variable and their descriptions.
+The Detroit dataset is from a book called “Subset selection in Regression”. The original data was collected by J.C. Fisher and used in his paper “Homicide in Detroit: The Role of Firearms”, Criminology, vol.14, 387-400 (1976). The data collected represents homicide data in Detroit from 1961-1973. The data was obtained from ![]http://lib.stat.cmu.edu/datasets/detroit. The following table lists each variable and their descriptions.
 
-
+----
 <center>Detroit Dataset table</center>
+
+----
+
 
 
 | Variable   | Scale           | Predictor/Output  | Measurement |
@@ -46,3 +49,10 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 |HOM(# of homicides)|8.52-52.33| Predictor/Output|Quantitative |
 |ACC(Death rate in accidents)|39.17| Predictor/Output|Quantitative |
 |ASR(# of assaults)|218-473| Predictor/Output|Quantitative |
+
+----
+**Methods of Analysis**
+
+----
+
+**Overview:** For the Detroit dataset I have used several modeling techniques (Correlation, Simple Linear Regression, Multiple Linear Regression, Subset Selection, and Generalized Additive Models). The utilization of the plot function helped to determine what variables in the dataset would be significant and those which would not be significant. The correlation function was also used to determine which variables had a high correlation with the outcome variable of homicide. The models were chosen due to the continuous quantitative features of the Detroit dataset. Simple linear regression was utilized and helped to determine the number of predictors in the dataset that would be needed to predict homicide(s) in Detroit . GLM, LDA, QDA, and K-Nearest-Neighbors(KNN) were ignored due to the dataset having continuous variables which would not model well as low or high classification. Lastly the outcome variable is continuous and the above methods are utilized on qualitative outcome variables.
