@@ -9,13 +9,18 @@ date: "December 14 , 2018"
 
 <center>Final Data Analysis-Detroit Dataset</center>
 
+
 <center>Ben Gonzalez</center>
+
 
 <center>AA530-Advanced Analytics</center>
 
+
 <center>Summer,2015</center>
 
+
 <center>Dr. Mudigonda</center>
+
 
 
 **Introduction: Detroit Dataset**
