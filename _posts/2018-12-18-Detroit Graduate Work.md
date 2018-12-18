@@ -31,14 +31,13 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 | FTP(Full-Time Police)    | Predict future homicides | Predictor |  Quantitative |
 |  UEMP(Unemployment)    | 3.2-11     |  Predictor/Output |  Quantitative  |
 | LIC(Hangun Licences) | 156.4-1134.2 |    Predictor | Quantitative  |
-|GR(Handgun Registrations) | | Predictor/Output|Quantitative |
-|CLEAR(Homicides cleared) | | Predictor/Output|Quantitative |
-|WM(White Males) | | Predictor/Output|Quantitative |
-| NMAN(Non-manufacturing workers)| | Predictor/Output|Quantitative |
-|GOV(# of government workers) | | Predictor/Output|Quantitative |
-|HE(Average Hourly Earnings) | | Predictor/Output|Quantitative |
-| WE(Average Weekly Earnings) | | Predictor/Output|Quantitative |
-|HOM(# of homicides)|| Predictor/Output|Quantitative |
-|ACC(Death rate in accidents)|| Predictor/Output|Quantitative |
-|ACC(Death rate in accidents)|| Predictor/Output|Quantitative |
-|ASR(# of assaults)|| Predictor/Output|Quantitative |
+|GR(Handgun Registrations) | 180.5-1029.8| Predictor/Output|Quantitative |
+|CLEAR(Homicides cleared) |58.90-94.40 | Predictor/Output|Quantitative |
+|WM(White Males) | 359647-558724| Predictor/Output|Quantitative |
+| NMAN(Non-manufacturing workers)|539.1-819.8 | Predictor/Output|Quantitative |
+|GOV(# of government workers) |133.9-230.9 | Predictor/Output|Quantitative |
+|HE(Average Hourly Earnings) | 2.91-5.76| Predictor/Output|Quantitative |
+| WE(Average Weekly Earnings) | 117.2-258.1| Predictor/Output|Quantitative |
+|HOM(# of homicides)|8.52-52.33| Predictor/Output|Quantitative |
+|ACC(Death rate in accidents)|39.17| Predictor/Output|Quantitative |
+|ASR(# of assaults)|218-473| Predictor/Output|Quantitative |
