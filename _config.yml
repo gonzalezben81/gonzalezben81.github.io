@@ -30,6 +30,7 @@ navbar-links:
   Author's home: "http://www.gonzostats.us/"
   Tutorials:
     - Rmarkdown: "https://rmarkdown.rstudio.com/"
+    - Graduate Work: 
   About Me: "aboutme"
   Education: "education"
 
