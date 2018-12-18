@@ -1,3 +1,10 @@
+---
+layout: page
+title: Detroit Graduate Work
+subtitle: Crime prediction in Detroit, Michigan
+---
+
+
 Final Data Analysis-Detroit Dataset
 
 Ben Gonzalez
