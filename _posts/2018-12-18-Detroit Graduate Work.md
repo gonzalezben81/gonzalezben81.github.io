@@ -35,7 +35,7 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 
 
 | Variable   | Scale           | Predictor/Output  | Measurement |
-| ------------- |:-------------:| -----:|---|
+| :-------------: |:-------------:| :-----:|:---:|
 | FTP(Full-Time Police)    | Predict future homicides | Predictor |  Quantitative |
 |  UEMP(Unemployment)    | 3.2-11     |  Predictor/Output |  Quantitative  |
 | LIC(Hangun Licences) | 156.4-1134.2 |    Predictor | Quantitative  |
@@ -58,6 +58,40 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 **Overview:** For the Detroit dataset I have used several modeling techniques (Correlation, Simple Linear Regression, Multiple Linear Regression, Subset Selection, and Generalized Additive Models). The utilization of the plot function helped to determine what variables in the dataset would be significant and those which would not be significant. The correlation function was also used to determine which variables had a high correlation with the outcome variable of homicide. The models were chosen due to the continuous quantitative features of the Detroit dataset. Simple linear regression was utilized and helped to determine the number of predictors in the dataset that would be needed to predict homicide(s) in Detroit . GLM, LDA, QDA, and K-Nearest-Neighbors(KNN) were ignored due to the dataset having continuous variables which would not model well as low or high classification. Lastly the outcome variable is continuous and the above methods are utilized on qualitative outcome variables.
 
 
-| Variable   | Scale           | Predictor/Output  | Measurement |
-| ------------- |:-------------:| -----:|---|
+| Model   | Learning Technique           | Variables Used  | Correlation: Scale = -1 to 1 |
+| :-------------: |:-------------:| :-----|:---:|
+| Model 1|Correlation |HOM - FTP|0.964 |
+| Model 2|Correlation |HOM - UEMP | 0.210 |
+| Model 3|Correlation |HOM - MAN |0.546 |
+| Model 4|Correlation |HOM - LIC |0.726 |
+| Model 5|Correlation |HOM - GR| 0.816|
+| Model 6|Correlation |HOM - CLEAR|-0.968 |
+| Model 7|Correlation |HOM - WM| -0.952|
+| Model 8|Correlation |HOM - NMAN| 0.955|
+| Model 9|Correlation |HOM - GOV| 0.958|
+| Model 10|Correlation |HOM - HE| 0.913|
+| Model 11|Correlation |HOM - WE| 0.888|
+| Model 12|Correlation |HOM - ACC|-0.204 |
+| Model 13|Correlation |HOM - ASR|0.824 |
 
+**Best Model Correlation =** Model 1- HOM~FTP. The correlation of 0.964 is the best predictor of correlation between homicide and all of the other predictors.
+
+---
+
+***<center>Simple Linear Regression Table - Detroit Dataset</center>***
+
+| Model   | Learning Technique           | Variables Used  | Multiple R-Squared |Adjusted R-Squared|
+| :-------------: |:-------------:| :-----|:---:|
+| Model 1|Simple Linear Regression |HOM - FTP|0.964 ||
+| Model 2|Simple Linear Regression |HOM - UEMP | 0.210 ||
+| Model 3|Simple Linear Regression |HOM - MAN |0.546 ||
+| Model 4|Simple Linear Regression |HOM - LIC |0.726 ||
+| Model 5|Simple Linear Regression |HOM - GR| 0.816||
+| Model 6|Simple Linear Regression |HOM - CLEAR|-0.968 ||
+| Model 7|Simple Linear Regression |HOM - WM| -0.952||
+| Model 8|Simple Linear Regression |HOM - NMAN| 0.955||
+| Model 9|Simple Linear Regression |HOM - GOV| 0.958||
+| Model 10|Simple Linear Regression |HOM - HE| 0.913||
+| Model 11|Simple Linear Regression |HOM - WE| 0.888||
+| Model 12|Simple Linear Regression |HOM - ACC|-0.204 ||
+| Model 13|Simple Linear Regression |HOM - ASR|0.824 ||
