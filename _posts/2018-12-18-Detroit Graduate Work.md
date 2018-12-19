@@ -170,3 +170,13 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |Model 1|Simple Linear Regression|Outcome=HOM Predictor=FTP|Correlation=0.964|||
 |Model 2|Multiple Linear Regression|Outcome=HOM Predictors=FTP, MAN, LIC, GR,WM,NMAN,GOV,HE,WE,ASR|Multiple R-Squared=0.9998 ADJR2=0.9986||p-value=0.001188|
+|Model 3|Subset Selection Method=Backward|Outcome=HOM Predictors=All Other Variables|Multiple R-Squared=0.999 ADJR2=0.999|BIC = 8||
+|Model 4|Generalized Additive Model / Polynomial Regression|Outcome=HOM Predictors=FTP,LIC,NMAN,GOV^2,HE^3,WE,ASR|Multiple R-Squared=0.999
+ADJR2=0.9944||p-value=0.004688|
+|Model 5|Tree Based Methods Linear Model K-Fold CV Approach|Outcome=HOM Predictors=All other variables|||Optimal Configuration= 4 Predictors 9 Trees|
+|Model 6|Validation Set Approach|Outcome=HOM Predictor=LIC|MSE = 108.0558|||
+
+
+**Best Model Selection:** The best model for the Detroit Dataset is Model 4 in the best model selection table. The learning technique is the generalized additive model-polynomial regression. This model has the highest adjusted r-squared utilizing the least amount of predictors at 7. The p-value is 0.004688 and is the lowest for this number of predictors. The significant predictors for the outcome variable are FTP(full time police), LIC( Gun Licenses), and NMAN(Non-Manufacturing Jobs).
+
+---
