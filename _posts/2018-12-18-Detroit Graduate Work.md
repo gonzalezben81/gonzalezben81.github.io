@@ -147,3 +147,18 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 | Model 39|Random Forest K-Fold CV Approach|Outcome=HOM Predictors=All other variables|216.2263 |5.84121|-8.47|8 Predictors|3 Trees|
 | Model 40|Random Forest Boosting K-Fold CV Approach|Outcome=HOM Predictors=All other variables|Sample Size too small to utilize method|Sample Size too small to utilize method|Sample Size too small to utilize method|Sample Size too small to utilize method|Sample Size too small to utilize method|
 | Model 41|Linear Model K-Fold CV Approach|Outcome=HOM Predictors=All other variables|N/A |210.021|N/A|4 Predictors|9 Trees|
+
+**Best Model Tree Based Methods:** The best model of the tree based methods is Model 41 the Linear Model K-Fold CV Approach Model. While it has a higher minimum MSE. The other models have a negative percentage of the variance explained for the data. The optimal number of predictors is 4 and the optimal number of trees is 9.
+
+---
+
+***<center>Validation Set Approach - Detroit Dataset</center>***
+| Model   | Learning Technique | Variables Used  | Minimum MSE |
+|:---:|:---:|:---:|:---:|
+|Model 42|Cross Validation Approach|Outcome=HOM Predictor=LIC|180.6076|
+|Model 43|K-Fold Cross Validation|Outcome=HOM Predictor=LIC|108.0558|
+|Model 43|K-Fold Cross Validation|Outcome=HOM Predictor=LIC|179.4411|
+
+**Best Model Validation Set Approach:** The best model for the validation set approach is Model 43. The K-Fold Cross Validation Approach has the lowest MSE 108.0558 out of all of the models in the set.
+
+---
