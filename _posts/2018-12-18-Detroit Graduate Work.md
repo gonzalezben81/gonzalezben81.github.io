@@ -81,17 +81,21 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 ***<center>Simple Linear Regression Table - Detroit Dataset</center>***
 
 | Model   | Learning Technique           | Variables Used  | Multiple R-Squared |Adjusted R-Squared|
-| :-------------: |:-------------:| :-----|:---:|
-| Model 1|Simple Linear Regression |HOM - FTP|0.964 ||
-| Model 2|Simple Linear Regression |HOM - UEMP | 0.210 ||
-| Model 3|Simple Linear Regression |HOM - MAN |0.546 ||
-| Model 4|Simple Linear Regression |HOM - LIC |0.726 ||
-| Model 5|Simple Linear Regression |HOM - GR| 0.816||
-| Model 6|Simple Linear Regression |HOM - CLEAR|-0.968 ||
-| Model 7|Simple Linear Regression |HOM - WM| -0.952||
-| Model 8|Simple Linear Regression |HOM - NMAN| 0.955||
-| Model 9|Simple Linear Regression |HOM - GOV| 0.958||
-| Model 10|Simple Linear Regression |HOM - HE| 0.913||
-| Model 11|Simple Linear Regression |HOM - WE| 0.888||
-| Model 12|Simple Linear Regression |HOM - ACC|-0.204 ||
-| Model 13|Simple Linear Regression |HOM - ASR|0.824 ||
+| :-------------: |:-------------:| :-----|:---:|:---:|
+| Model 1|Simple Linear Regression |HOM - FTP|0.93 |0.923|
+| Model 2|Simple Linear Regression |HOM - UEMP | 0.04 |-0.04|
+| Model 3|Simple Linear Regression |HOM - MAN |0.30 |0.23|
+| Model 4|Simple Linear Regression |HOM - LIC |0.53 |0.48|
+| Model 5|Simple Linear Regression |HOM - GR| 0.67|0.636|
+| Model 6|Simple Linear Regression |HOM - CLEAR|0.94 |0.93|
+| Model 7|Simple Linear Regression |HOM - WM| 0.91|0.89|
+| Model 8|Simple Linear Regression |HOM - NMAN| 0.91|0.91|
+| Model 9|Simple Linear Regression |HOM - GOV| 0.92|0.91|
+| Model 10|Simple Linear Regression |HOM - HE| 0.83|0.81|
+| Model 11|Simple Linear Regression |HOM - WE| 0.79|0.76|
+| Model 12|Simple Linear Regression |HOM - ACC|0.04 |-0.04|
+| Model 13|Simple Linear Regression |HOM - ASR|0.68 |0.65|
+
+
+**Best Model Simple Linear Regression:** The best model is Model 19 and has an adjusted r-squared of 0.93.
+---
