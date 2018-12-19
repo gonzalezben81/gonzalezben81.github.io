@@ -115,8 +115,8 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 
 ***<center>Subset Selection Models Table - Detroit Dataset</center>***
 
-| Model   | Learning Technique           | Variables Used  | RSQ |ADJR2|MIN BIC|
-| :-------------: |:-------------:| :-----|:---:|:---:|:---:|
+| Model   | Learning Technique  | Variables Used | RSQ |ADJR2|MIN BIC|
+|:-------------:|:-------------:|:-----:|:---:|:---:|:---:|
 | Model 30|Subset Model Selection Method=Forward |Outcome=HOM Predictors=All Other Variables|0.999 |0.9989|8|
 | Model 31|Subset Model Selection NVMAX=12 |Outcome=HOM Predictors=All Other Variables | 1.000 |0.9999|12|
 | Model 32|Subset Model Selection Method=Backward |Outcome=HOM Predictors=All Other Variables|0.999 |0.999|8|
@@ -153,12 +153,20 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 ---
 
 ***<center>Validation Set Approach - Detroit Dataset</center>***
-| Model   | Learning Technique | Variables Used  | Minimum MSE |
-|:---:|:---:|:---:|:---:|
+
+| Model  | Learning Technique      | Variables Used            | Minimum MSE |
+|:------:|:-----------------------:|:-------------------------:|:---:|
 |Model 42|Cross Validation Approach|Outcome=HOM Predictor=LIC|180.6076|
 |Model 43|K-Fold Cross Validation|Outcome=HOM Predictor=LIC|108.0558|
-|Model 43|K-Fold Cross Validation|Outcome=HOM Predictor=LIC|179.4411|
+|Model 44|K-Fold Cross Validation|Outcome=HOM Predictor=LIC|179.4411|
 
 **Best Model Validation Set Approach:** The best model for the validation set approach is Model 43. The K-Fold Cross Validation Approach has the lowest MSE 108.0558 out of all of the models in the set.
 
 ---
+
+***<center>Best Model Selection - Detroit Dataset</center>***
+
+| Model   | Learning Technique | Variables Used  | Correlation(s)/MSE/RSQ/ADJR2/%Variance Explained |AIC/BIC/CP|Optimal Configuration/F-Statistic/p-value|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|Model 1|Simple Linear Regression|Outcome=HOM Predictor=FTP|Correlation=0.964|||
+|Model 2|Multiple Linear Regression|Outcome=HOM Predictors=FTP, MAN, LIC, GR,WM,NMAN,GOV,HE,WE,ASR|Multiple R-Squared=0.9998 ADJR2=0.9986||p-value=0.001188|
