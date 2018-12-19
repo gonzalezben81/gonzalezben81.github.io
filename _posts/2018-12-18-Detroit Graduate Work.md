@@ -97,5 +97,6 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 | Model 13|Simple Linear Regression |HOM - ASR|0.68 |0.65|
 
 
-**Best Model Simple Linear Regression:** The best model is Model 19 and has an adjusted r-squared of 0.93.
+**Best Model Simple Linear Regression:**  The best model is Model 19 and has an adjusted r-squared of 0.93.
+
 ---
