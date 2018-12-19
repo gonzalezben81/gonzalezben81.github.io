@@ -35,7 +35,7 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 
 
 | Variable   | Scale           | Predictor/Output  | Measurement |
-| :-------------: |:-------------:| :-----:|:---:|
+| :------------- |:-------------:| :-----:|:---:|
 | FTP(Full-Time Police)    | Predict future homicides | Predictor |  Quantitative |
 |  UEMP(Unemployment)    | 3.2-11     |  Predictor/Output |  Quantitative  |
 | LIC(Hangun Licences) | 156.4-1134.2 |    Predictor | Quantitative  |
@@ -100,3 +100,50 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 **Best Model Simple Linear Regression:**  The best model is Model 19 and has an adjusted r-squared of 0.93.
 
 ---
+
+***<center>Multiple Linear Regression Table - Detroit Dataset</center>***
+
+| Model   | Learning Technique           | Variables Used  | Multiple R-Squared |Adjusted R-Squared|p-value|
+| :-------------: |:-------------:| :-----|:---:|:---:|:---:|
+| Model 27|Multiple Linear Regression |Outcome=HOM Predictors=FTP, MAN, LIC, GR,WM,NMAN,GOV,HE,WE,ASR|0.998 |0.9986|0.001188|
+| Model 28|Multiple Linear Regression |Outcome=HOM Predictors=NMAN, GOV, HE, WE, ACC, ASR | 0.9912 |0.9823|6.829E-06|
+| Model 29|Multiple Linear Regression |Outcome=HOM Predictors=LIC,FTP, GR,HE,WE,NMAN, ASR|0.9936 |0.9847|3.512E-05|
+
+**Best Model Multiple Linear Regression:** The best model for simple linear regression is Model 27 and has the highest adjusted r-squared 0.9986. The model also has a low p-value of 0.001188.
+
+---
+
+***<center>Subset Selection Models Table - Detroit Dataset</center>***
+
+| Model   | Learning Technique           | Variables Used  | RSQ |ADJR2|MIN BIC|
+| :-------------: |:-------------:| :-----|:---:|:---:|:---:|
+| Model 30|Subset Model Selection Method=Forward |Outcome=HOM Predictors=All Other Variables|0.999 |0.9989|8|
+| Model 31|Subset Model Selection NVMAX=12 |Outcome=HOM Predictors=All Other Variables | 1.000 |0.9999|12|
+| Model 32|Subset Model Selection Method=Backward |Outcome=HOM Predictors=All Other Variables|0.999 |0.999|8|
+
+**Best Model Subset Selection:** The best subset model selection is Model 32 utilizing the backward method. The model utilizes the lowest BIC and has the highest adjusted r-squared 0.999 utilizing the least number of variables.
+
+---
+
+***<center>Generalized Additive Models (GAMs) Approach - Detroit Dataset</center>***
+
+| Model   | Learning Technique           | Variables Used  | Total Predictors |Multiple R-Squared|ADJR2|p-value|
+| :-------------: |:-------------:| :-----|:---:|:---:|:---:|:---:|
+| Model 33|Generalized Additive Model Splines Regression |Outcome=HOM Predictors=UEMP,LIC,WE,HE,ASR,NMAN,MAN,ASR|8 |0.998|0.996|6.714e-07|
+| Model 34|Generalized Additive Model Splines Regression |Outcome=HOM Predictors=MAN,LIC,WM,NMAN,HE,WE|6 |0.997|0.994|2.056e-07|
+| Model 35|Generalized Additive Model Splines Regression |Outcome=HOM Predictors=FTP,LIC,GR,NMAN,GOV,HE,WE,ASR|8 |0.994|0.984|0.002583|
+| Model 36|Generalized Additive Model Polynomial Regression |Outcome=HOM Predictors=FTP,LIC,NMAN,GOV^2,HE^3,WE,ASR|7 |0.999|0.9944|0.004688|
+| Model 37|Generalized Additive Model Polynomial Regression |Outcome=HOM Predictors=FTP^2,GR,LIC^2,NMAN,GOV,HE,WE,ASR|8 |0.998|0.993|0.005753|
+
+**Best Model Generalized Additive Model:** The best model for the generalized additive model is Model 36 that utilizes polynomial regression. The model utilizes the least amount of predictors of all the generalized additive models. The model has the highest adjusted r-squared of 0.9944 that utilizes the least number of predictors. The p-values is also low at 0.004688.
+
+---
+
+***<center>Tree Based Methods - Detroit Dataset</center>***
+
+| Model   | Learning Technique           | Variables Used  | Mean of Squared Residuals |Minimum MSE|% Variance Explained|Optimal Configuration|Optimal Trees/Interaction F-Statistic|
+| :-------------: |:-------------:| :-----|:---:|:---:|:---:|:---:|---|
+| Model 38|Random Forest|Outcome=HOM Predictors=All other variables|216.2263 |212.892|-8.47|7 Predictors|10 Trees|
+| Model 39|Random Forest K-Fold CV Approach|Outcome=HOM Predictors=All other variables|216.2263 |5.84121|-8.47|8 Predictors|3 Trees|
+| Model 40|Random Forest Boosting K-Fold CV Approach|Outcome=HOM Predictors=All other variables|Sample Size too small to utilize method|Sample Size too small to utilize method|Sample Size too small to utilize method|Sample Size too small to utilize method|Sample Size too small to utilize method|
+| Model 41|Linear Model K-Fold CV Approach|Outcome=HOM Predictors=All other variables|N/A |210.021|N/A|4 Predictors|9 Trees|
