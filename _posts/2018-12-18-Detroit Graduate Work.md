@@ -79,7 +79,8 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 ---
 
 ***<center>Simple Linear Regression Table - Detroit Dataset</center>***
-
+<center>
+  
 | Model   | Learning Technique           | Variables Used  | Multiple R-Squared |Adjusted R-Squared|
 | :-------------: |:-------------:| :-----|:---:|:---:|
 | Model 14|Simple Linear Regression |HOM - FTP|0.93 |0.923|
@@ -96,6 +97,7 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 | Model 25|Simple Linear Regression |HOM - ACC|0.04 |-0.04|
 | Model 26|Simple Linear Regression |HOM - ASR|0.68 |0.65|
 
+</center>
 
 **Best Model Simple Linear Regression:**  The best model is Model 19 and has an adjusted r-squared of 0.93.
 
@@ -141,6 +143,8 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 
 ***<center>Tree Based Methods - Detroit Dataset</center>***
 
+<center>
+
 | Model   | Learning Technique           | Variables Used  | Mean of Squared Residuals |Minimum MSE|% Variance Explained|Optimal Configuration|Optimal Trees/Interaction F-Statistic|
 | :-------------: |:-------------:| :-----|:---:|:---:|:---:|:---:|---|
 | Model 38|Random Forest|Outcome=HOM Predictors=All other variables|216.2263 |212.892|-8.47|7 Predictors|10 Trees|
@@ -148,6 +152,7 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 | Model 40|Random Forest Boosting K-Fold CV Approach|Outcome=HOM Predictors=All other variables|Sample Size too small to utilize method|Sample Size too small to utilize method|Sample Size too small to utilize method|Sample Size too small to utilize method|Sample Size too small to utilize method|
 | Model 41|Linear Model K-Fold CV Approach|Outcome=HOM Predictors=All other variables|N/A |210.021|N/A|4 Predictors|9 Trees|
 
+</center>
 **Best Model Tree Based Methods:** The best model of the tree based methods is Model 41 the Linear Model K-Fold CV Approach Model. While it has a higher minimum MSE. The other models have a negative percentage of the variance explained for the data. The optimal number of predictors is 4 and the optimal number of trees is 9.
 
 ---
@@ -166,6 +171,8 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 
 ***<center>Best Model Selection - Detroit Dataset</center>***
 
+<center>
+
 | Model   | Learning Technique | Variables Used  | Correlation(s)/MSE/RSQ/ADJR2/%Variance Explained |AIC/BIC/CP|Optimal Configuration/F-Statistic/p-value|
 |:---:|:---:|:---:|:---:|:---:|:---:|
 |Model 1|Simple Linear Regression|Outcome=HOM Predictor=FTP|Correlation=0.964|||
@@ -175,6 +182,8 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 ADJR2=0.9944||p-value=0.004688|
 |Model 5|Tree Based Methods Linear Model K-Fold CV Approach|Outcome=HOM Predictors=All other variables|||Optimal Configuration= 4 Predictors 9 Trees|
 |Model 6|Validation Set Approach|Outcome=HOM Predictor=LIC|MSE = 108.0558|||
+
+</center>
 
 
 **Best Model Selection:** The best model for the Detroit Dataset is Model 4 in the best model selection table. The learning technique is the generalized additive model-polynomial regression. This model has the highest adjusted r-squared utilizing the least amount of predictors at 7. The p-value is 0.004688 and is the lowest for this number of predictors. The significant predictors for the outcome variable are FTP(full time police), LIC( Gun Licenses), and NMAN(Non-Manufacturing Jobs).
