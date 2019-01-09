@@ -31,7 +31,7 @@ navbar-links:
   Tutorials:
     - Rmarkdown: "https://rmarkdown.rstudio.com/"
   Graduate Work: 
-    - Detroit: "http://gonzalezben81.github.io/detroit.md"
+    - Detroit: "_posts/2018-12-18-Detroit Graduate Work.md"
   About Me: "aboutme"
   Education: "education"
   Software Installation Guides: "education"
