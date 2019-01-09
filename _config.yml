@@ -130,7 +130,7 @@ url-pretty: "gonzalezben81.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 # ---- Comments ---- #
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
- disqus: "gonzalezben81-github-io"
+disqus: "gonzalezben81-github-io"
 
 # To use Facebook Comments, fill in a Facebook App ID
 # fb_comment_id: ""
