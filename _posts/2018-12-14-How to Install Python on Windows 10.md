@@ -1,6 +1,7 @@
 ---
 title: "How to Install Python on Windows 10"
 author: "Ben Gonzalez"
+comments: true
 bigimg: /img/python.png
 date: "December 14 , 2018"
 ---
