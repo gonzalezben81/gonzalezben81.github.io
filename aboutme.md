@@ -12,6 +12,7 @@ My name is Ben Gonzalez. I currently live in the St. Louis, MO area and work wit
     + Master of Education: Adult & Higher Education
     + Master of Arts: Communication
 
+---
 **<center>Shiny Apps:</center>**
 
 <center><a href = "http://www.rgonzo.us/shiny/apps/textanalysis/" target = "_blank">Text Analysis</a></center>
@@ -33,7 +34,7 @@ My name is Ben Gonzalez. I currently live in the St. Louis, MO area and work wit
 
 
 <center><a href = "http://www.rgonzo.us/shiny/apps/webscraper/" target = "_blank">Web Scraper</a></center>
-
+---
 
 
 
