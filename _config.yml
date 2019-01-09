@@ -127,7 +127,7 @@ url-pretty: "gonzalezben81.github.io"  # eg. "deanattali.com/beautiful-jekyll"
 #  uri: "demo.wiki.pro"
 #  opt-out: true
 
-# --- Comments --- #
+# ---- Comments ---- #
 
 # Fill in your Disqus shortname (NOT the userid) if you want to support Disqus comments
  disqus: "gonzalezben81-github-io"
