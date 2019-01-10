@@ -31,7 +31,7 @@ navbar-links:
   Tutorials:
     - Rmarkdown: "https://rmarkdown.rstudio.com/"
     - Text Mining in R: "2018-12-14-Romeo-and-Juliet-Text-Mining"
-    - Maps (Congressional): "2017-12-09-Illinois-Congressional-Map"
+    - Maps (Congressional): "2017-09-03-Illinois-Congressional-Map"
   Graduate Work: 
     - Detroit: "2018-12-14-Detroit-Graduate-Work"
     - Student Performance: "2018-12-14-Detroit-Graduate-Work"
