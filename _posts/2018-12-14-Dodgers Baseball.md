@@ -13,6 +13,24 @@ description for the Dodgers dataset.
 
 
 
-
+<center>
 ### Dodgers Dataset Description
+</center>
 
+| Variable   | Description          | Quantitative or Qualitative  |
+| :------------- |:-------------| :-----|
+|Month |Month of the year |Qualitative|
+|Day |Day of Month| Quantitative|
+|Attend |Attendance at game| Quantitative|
+|Day of Week| Day of week| Qualitative|
+|Opponent| Opponent played in game| Qualitative|
+|Temp| Temperature at time of game |Quantitative|
+|Skies| Condition of skies| Quantitative|
+|Day Night| Time of game (day or night)|Qualitative|
+|Cap| Cap given away (yes or no)| Qualitative|
+|Shirt| Shirt given away (yes or no)|Qualitative|
+|Fireworks| Fireworks used at game (yes or no)|Qualitative|
+|Bobblehead| Bobblehead given away (yes or no)|Qualitative|
+|Ordered day of week| Day of week (Mon, Tues. etc.…)|Qualitative|
+|Ordered month| Month of year (Apr, Aug, etc.…)|Qualitative|
+|Temp high low| Temperature ( Cold, Mild,Hot) |Qualitative|
