@@ -1,4 +1,4 @@
-<center>
+
 The following analysis is of the dodgers baseball dataset received from Professor Keith
 Hacke for Contemporary Analytics 5750. The dataset looks at the promotional use of items such
 as fireworks, caps, shirts, and bobblehead’s as giveaways. The purpose of the following analysis
@@ -12,4 +12,7 @@ temperature also impact attendance as well. The following tables list the variab
 description for the Dodgers dataset.
 
 
-</center>
+
+
+### Dodgers Dataset Description
+
