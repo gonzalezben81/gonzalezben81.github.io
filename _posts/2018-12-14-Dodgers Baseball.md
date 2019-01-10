@@ -14,8 +14,11 @@ description for the Dodgers dataset.
 
 
 <center>
-### Dodgers Dataset Description
+  
+### Dodgers Dataset Description 
+
 </center>
+
 
 | Variable   | Description          | Quantitative or Qualitative  |
 | :------------- |:-------------| :-----|
