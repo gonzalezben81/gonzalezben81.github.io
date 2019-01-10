@@ -33,10 +33,10 @@ navbar-links:
     - Text Mining in R: "2018-12-14-Romeo-and-Juliet-Text-Mining"
     - Maps (Congressional): "2017-09-03-Illinois-Congressional-Map"
   Graduate Work: 
-    - Detroit: 
-        - Detroit: "2018-12-14-Detroit-Graduate-Work"
-        - Detorit R Code: "2018-12-10-Detroit-R-Code"
+    - Detroit: "2018-12-14-Detroit-Graduate-Work"
+    - Detorit R Code: "2018-12-10-Detroit-R-Code"
     - Student Performance: "2018-12-14-Detroit-Graduate-Work"
+    - Student Performance R Code: "208-12-14-Student-Performance-R-Code"
     - Dodgers Baseball: ""
   About Me: "aboutme"
   Education: "education"
