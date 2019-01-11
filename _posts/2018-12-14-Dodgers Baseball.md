@@ -41,21 +41,33 @@ description for the Dodgers dataset.
 
 Dodgers' Dataset Visualizations
 
+![](/img/dodgers_temperature.png)
+
 The temperature visualization shows that the temperature at the time of the game is a good
 indicator of the attendance by individuals at the game.
+
+![](/img/dodgers_attendance.png)
 
 The attendance by day of week chart shows that the highest number of individuals attended
 games on Tuesdays.
 
+![](/img/dodgers_bobblehead_attendance.png)
+
 The bobblehead by attendance chart shows that more individuals attended games when a
 bobblehead was given away than if there was no bobblehead given away.
+
+![](/img/dodgers_tshirt_giveaway.png)
 
 The t-shirt by attendance chart shows that individuals were more likely to attend a game if a tshirt
 was given away, versus if a t-shirt was not given away.
 
+![](/img/dodgers_fireworks_attendance.png)
+
 The fireworks by attendance chart shows that individuals were neither more nor less likely to
 attend a game with fireworks present. This may be due to fireworks being used on holidays,
 weekends, or after a win against certain teams.
+
+![](/img/dodgers_cap_giveaway.png)
 
 The cap by attendance chart shows that individuals were not more or less likely to attend a game
 if a cap was being given away at the game.
@@ -77,19 +89,36 @@ that bobblehead giveaways may affect attendance more than any other promotional 
 
 ### Dodgers Dataset: Conditional Variable Charts
 
+![](/img/dodgers_fireworks_lattice.png)
+
 The fireworks chart shows that more individuals were likely to attend a night game with clear
 skies if fireworks were present than any other time of day or condition of the skies. 
+
+![](/img/dodgers_cap_lattice.png)
 
 The cap chart shows that more individuals attended a game with a cap give away when the
 conditions were both day and the skies were clear. 
 
+![](/img/dodgers_shirt_lattice.png)
+
 The shirt chart shows that more individuals attended a night game that had clear skies if a shirt
 was being given away. 
+
+![](/img/dodgers_bobblehead_lattice.png)
 
 The bobblehead chart shows that more individuals attended either a night game whether it was
 clear or cloudy if a bobblehead was being given away. This chart also shows that bobblehead’s
 have an impact on the number of individuals who attend games.
 
+![](/img/dodgers_opponent_lattice.png)
+
+![](/img/dodgers_opponent_shirt_lattice.png)
+
+![](/img/dodgers_opponent_fireworks_lattice.png)
+
+![](/img/dodgers_opponent_cap_lattice.png)
+
+![](/img/dodgers_temp_lattice.png)
 ### Linear Models
 
 Dodgers Linear Models: Single Giveaways
