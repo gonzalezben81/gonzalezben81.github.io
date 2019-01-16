@@ -180,6 +180,10 @@ F-statistic: 841.1 on 10 and 2 DF,  p-value: 0.001188
 
 **Best Model Subset Selection:** The best subset model selection is Model 32 utilizing the backward method. The model utilizes the lowest BIC and has the highest adjusted r-squared 0.999 utilizing the least number of variables.
 
+![](/img/detroit_model3_bic.png)
+
+![](/img/detroit_model3_adjrsquared.png)
+
 ---
 
 ***<center>Generalized Additive Models (GAMs) Approach - Detroit Dataset</center>***
