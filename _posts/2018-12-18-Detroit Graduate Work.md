@@ -100,6 +100,7 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 </center>
 
 **Best Model Simple Linear Regression:**  The best model is Model 19 and has an adjusted r-squared of 0.93.
+
 ````
 summary(lm.fitdetroit6)
 
@@ -121,6 +122,8 @@ Residual standard error: 4.264 on 11 degrees of freedom
 Multiple R-squared:  0.9379,	Adjusted R-squared:  0.9323 
 F-statistic: 166.2 on 1 and 11 DF,  p-value: 5.553e-08
 ````
+
+![](/img/homicide.png)
 ---
 
 ***<center>Multiple Linear Regression Table - Detroit Dataset</center>***
@@ -132,6 +135,38 @@ F-statistic: 166.2 on 1 and 11 DF,  p-value: 5.553e-08
 | Model 29|Multiple Linear Regression |Outcome=HOM Predictors=LIC,FTP, GR,HE,WE,NMAN, ASR|0.9936 |0.9847|3.512E-05|
 
 **Best Model Multiple Linear Regression:** The best model for simple linear regression is Model 27 and has the highest adjusted r-squared 0.9986. The model also has a low p-value of 0.001188.
+
+````
+Call:
+lm(formula = HOM ~ FTP + MAN + LIC + GR + WM + NMAN + GOV + HE + 
+    WE + ASR, data = Detroit_Data_Ben_Gonzalez)
+
+Residuals:
+        1         2         3         4         5         6         7         8         9        10        11 
+ 0.134676 -0.119242  0.035018  0.156071 -0.527640  0.528712 -0.262829  0.140073 -0.115613 -0.167151  0.101167 
+       12        13 
+-0.002143  0.098901 
+
+Coefficients:
+              Estimate Std. Error t value Pr(>|t|)  
+(Intercept) -2.021e+02  4.986e+01  -4.054   0.0558 .
+FTP          2.933e-02  2.345e-02   1.251   0.3375  
+MAN         -1.150e-01  1.832e-02  -6.279   0.0244 *
+LIC          2.704e-02  4.221e-03   6.406   0.0235 *
+GR          -4.355e-03  2.362e-03  -1.844   0.2066  
+WM           2.385e-04  6.509e-05   3.664   0.0671 .
+NMAN         1.147e-01  3.824e-02   3.000   0.0954 .
+GOV          2.740e-01  9.392e-02   2.917   0.1001  
+HE          -9.155e+00  3.038e+00  -3.013   0.0947 .
+WE           4.393e-01  7.687e-02   5.714   0.0293 *
+ASR         -1.437e-02  1.602e-02  -0.897   0.4644  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.6188 on 2 degrees of freedom
+Multiple R-squared:  0.9998,	Adjusted R-squared:  0.9986 
+F-statistic: 841.1 on 10 and 2 DF,  p-value: 0.001188
+````
 
 ---
 
