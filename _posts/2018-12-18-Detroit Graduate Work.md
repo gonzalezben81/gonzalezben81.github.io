@@ -281,12 +281,13 @@ F-statistic: 212.7 on 10 and 2 DF,  p-value: 0.004688
 
 <center>
 
-| Model   | Learning Technique           | Variables Used  | Mean of Squared Residuals |Minimum MSE|% Variance Explained|Optimal Configuration|Optimal Trees/Interaction F-Statistic|
-| :-------------: |:-------------:| :-----|:---:|:---:|:---:|:---:|---|
+| Model   | Learning Technique| Variables Used  | Mean of Squared Residuals |Minimum MSE|% Variance Explained|Optimal Configuration|Optimal Trees/Interaction F-Statistic|
+| :-------------: |:-------------:| :-----|:---:|:---:|:---:|:---:|:---|
 | Model 38|Random Forest|Outcome=HOM Predictors=All other variables|216.2263 |212.892|-8.47|7 Predictors|10 Trees|
 | Model 39|Random Forest K-Fold CV Approach|Outcome=HOM Predictors=All other variables|216.2263 |5.84121|-8.47|8 Predictors|3 Trees|
-| Model 40|Random Forest Boosting K-Fold CV Approach|Outcome=HOM Predictors=All other variables|Sample Size too small to utilize method|Sample Size too small to utilize method|Sample Size too small to utilize method|Sample Size too small to utilize method|Sample Size too small to utilize method|
+| Model 40|Random Forest Boosting K-Fold CV Approach|Outcome=HOM Predictors=All other variables|N/A|N/A|N/A|N/A|N/A|
 | Model 41|Linear Model K-Fold CV Approach|Outcome=HOM Predictors=All other variables|N/A |210.021|N/A|4 Predictors|9 Trees|
+
 
 </center>
 **Best Model Tree Based Methods:** The best model of the tree based methods is Model 41 the Linear Model K-Fold CV Approach Model. While it has a higher minimum MSE. The other models have a negative percentage of the variance explained for the data. The optimal number of predictors is 4 and the optimal number of trees is 9.
