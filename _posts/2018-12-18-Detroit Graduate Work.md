@@ -290,6 +290,9 @@ F-statistic: 212.7 on 10 and 2 DF,  p-value: 0.004688
 
 
 </center>
+
+**Note: N/A = Sample Size too small to utilize method**
+
 **Best Model Tree Based Methods:** The best model of the tree based methods is Model 41 the Linear Model K-Fold CV Approach Model. While it has a higher minimum MSE. The other models have a negative percentage of the variance explained for the data. The optimal number of predictors is 4 and the optimal number of trees is 9.
 
 ---
