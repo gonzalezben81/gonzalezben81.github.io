@@ -100,7 +100,27 @@ The Detroit dataset is from a book called “Subset selection in Regression”. 
 </center>
 
 **Best Model Simple Linear Regression:**  The best model is Model 19 and has an adjusted r-squared of 0.93.
+````
+summary(lm.fitdetroit6)
 
+Call:
+lm(formula = HOM ~ CLEAR, data = Detroit_Data_Ben_Gonzalez)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-7.385 -1.636 -1.059  2.804  8.737 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept) 127.22163    8.00767   15.89 6.21e-09 ***
+CLEAR        -1.25352    0.09724  -12.89 5.55e-08 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 4.264 on 11 degrees of freedom
+Multiple R-squared:  0.9379,	Adjusted R-squared:  0.9323 
+F-statistic: 166.2 on 1 and 11 DF,  p-value: 5.553e-08
+````
 ---
 
 ***<center>Multiple Linear Regression Table - Detroit Dataset</center>***
