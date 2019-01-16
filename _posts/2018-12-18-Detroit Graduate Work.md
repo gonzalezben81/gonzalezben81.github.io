@@ -25,7 +25,7 @@ date: "December 18 , 2018"
 
 **<center>Introduction: Detroit Dataset</center>**
 
-The Detroit dataset is from a book called “Subset selection in Regression”. The original data was collected by J.C. Fisher and used in his paper “Homicide in Detroit: The Role of Firearms”, Criminology, vol.14, 387-400 (1976). The data collected represents homicide data in Detroit from 1961-1973. The data was obtained from []http://lib.stat.cmu.edu/datasets/detroit. The following table lists each variable and their descriptions.
+The Detroit dataset is from a book called “Subset selection in Regression”. The original data was collected by J.C. Fisher and used in his paper “Homicide in Detroit: The Role of Firearms”, Criminology, vol.14, 387-400 (1976). The data collected represents homicide data in Detroit from 1961-1973. The data was obtained from http://lib.stat.cmu.edu/datasets/detroit. The following table lists each variable and their descriptions.
 
 ----
 <center>Detroit Dataset table</center>
@@ -198,6 +198,83 @@ F-statistic: 841.1 on 10 and 2 DF,  p-value: 0.001188
 
 **Best Model Generalized Additive Model:** The best model for the generalized additive model is Model 36 that utilizes polynomial regression. The model utilizes the least amount of predictors of all the generalized additive models. The model has the highest adjusted r-squared of 0.9944 that utilizes the least number of predictors. The p-values is also low at 0.004688.
 
+````
+Analysis of Variance Table
+
+Response: HOM
+             Df  Sum Sq Mean Sq   F value    Pr(>F)    
+FTP           1 2994.37 2994.37 1978.9471 0.0005049 ***
+LIC           1  151.19  151.19   99.9199 0.0098602 ** 
+NMAN          1   30.18   30.18   19.9431 0.0466611 *  
+poly(GOV, 2)  2   18.27    9.13    6.0363 0.1421203    
+poly(HE, 3)   3   23.30    7.77    5.1325 0.1673830    
+WE            1    0.65    0.65    0.4326 0.5782914    
+ASR           1    0.80    0.80    0.5300 0.5423085    
+Residuals     2    3.03    1.51                        
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> summary(gam.detroitmodel44)
+
+Call:
+lm(formula = HOM ~ FTP + LIC + NMAN + poly(GOV, 2) + poly(HE, 
+    3) + WE + ASR, data = Detroit_Data_Ben_Gonzalez)
+
+Residuals:
+        1         2         3         4         5         6         7         8         9        10        11        12 
+ 0.008567 -0.163223  0.199979 -0.520727  0.990593 -0.700423  0.534176 -0.012935 -0.837255  0.361341  0.277549 -0.149193 
+       13 
+ 0.011550 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)
+(Intercept)   -70.16794  127.52402  -0.550    0.637
+FTP            -0.29850    0.31798  -0.939    0.447
+LIC             0.03193    0.01821   1.753    0.222
+NMAN            0.12534    0.18927   0.662    0.576
+poly(GOV, 2)1   1.33967   48.34475   0.028    0.980
+poly(GOV, 2)2  40.96870   38.86995   1.054    0.402
+poly(HE, 3)1  -42.82354   75.21346  -0.569    0.627
+poly(HE, 3)2   -3.68839   10.90049  -0.338    0.767
+poly(HE, 3)3   -3.24754    7.03880  -0.461    0.690
+WE              0.54739    0.55821   0.981    0.430
+ASR            -0.02719    0.03734  -0.728    0.542
+
+Residual standard error: 1.23 on 2 degrees of freedom
+Multiple R-squared:  0.9991,	Adjusted R-squared:  0.9944 
+F-statistic: 212.7 on 10 and 2 DF,  p-value: 0.004688
+````
+
+````
+> summary(gam.detroitmodel44)
+
+Call:
+lm(formula = HOM ~ FTP + LIC + NMAN + poly(GOV, 2) + poly(HE, 
+    3) + WE + ASR, data = Detroit_Data_Ben_Gonzalez)
+
+Residuals:
+        1         2         3         4         5         6         7         8         9        10        11        12 
+ 0.008567 -0.163223  0.199979 -0.520727  0.990593 -0.700423  0.534176 -0.012935 -0.837255  0.361341  0.277549 -0.149193 
+       13 
+ 0.011550 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)
+(Intercept)   -70.16794  127.52402  -0.550    0.637
+FTP            -0.29850    0.31798  -0.939    0.447
+LIC             0.03193    0.01821   1.753    0.222
+NMAN            0.12534    0.18927   0.662    0.576
+poly(GOV, 2)1   1.33967   48.34475   0.028    0.980
+poly(GOV, 2)2  40.96870   38.86995   1.054    0.402
+poly(HE, 3)1  -42.82354   75.21346  -0.569    0.627
+poly(HE, 3)2   -3.68839   10.90049  -0.338    0.767
+poly(HE, 3)3   -3.24754    7.03880  -0.461    0.690
+WE              0.54739    0.55821   0.981    0.430
+ASR            -0.02719    0.03734  -0.728    0.542
+
+Residual standard error: 1.23 on 2 degrees of freedom
+Multiple R-squared:  0.9991,	Adjusted R-squared:  0.9944 
+F-statistic: 212.7 on 10 and 2 DF,  p-value: 0.004688
+````
 ---
 
 ***<center>Tree Based Methods - Detroit Dataset</center>***
@@ -226,6 +303,11 @@ F-statistic: 841.1 on 10 and 2 DF,  p-value: 0.001188
 
 **Best Model Validation Set Approach:** The best model for the validation set approach is Model 43. The K-Fold Cross Validation Approach has the lowest MSE 108.0558 out of all of the models in the set.
 
+R-Outpu: > cv.error
+
+````
+[1]  182.3850  108.0558  592.6336  519.8474 1318.5811
+````
 ---
 
 ***<center>Best Model Selection - Detroit Dataset</center>***
@@ -242,6 +324,55 @@ ADJR2=0.9944||p-value=0.004688|
 |Model 5|Tree Based Methods Linear Model K-Fold CV Approach|Outcome=HOM Predictors=All other variables|||Optimal Configuration= 4 Predictors 9 Trees|
 |Model 6|Validation Set Approach|Outcome=HOM Predictor=LIC|MSE = 108.0558|||
 
+R-Output: > anova(gam.detroitmodel44)
+````
+Analysis of Variance Table
+
+Response: HOM
+             Df  Sum Sq Mean Sq   F value    Pr(>F)    
+FTP           1 2994.37 2994.37 1978.9471 0.0005049 ***
+LIC           1  151.19  151.19   99.9199 0.0098602 ** 
+NMAN          1   30.18   30.18   19.9431 0.0466611 *  
+poly(GOV, 2)  2   18.27    9.13    6.0363 0.1421203    
+poly(HE, 3)   3   23.30    7.77    5.1325 0.1673830    
+WE            1    0.65    0.65    0.4326 0.5782914    
+ASR           1    0.80    0.80    0.5300 0.5423085    
+Residuals     2    3.03    1.51                        
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+````
+
+> summary(gam.detroitmodel44)
+````
+
+Call:
+lm(formula = HOM ~ FTP + LIC + NMAN + poly(GOV, 2) + poly(HE, 
+    3) + WE + ASR, data = Detroit_Data_Ben_Gonzalez)
+
+Residuals:
+        1         2         3         4         5         6         7         8         9        10        11        12 
+ 0.008567 -0.163223  0.199979 -0.520727  0.990593 -0.700423  0.534176 -0.012935 -0.837255  0.361341  0.277549 -0.149193 
+       13 
+ 0.011550 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)
+(Intercept)   -70.16794  127.52402  -0.550    0.637
+FTP            -0.29850    0.31798  -0.939    0.447
+LIC             0.03193    0.01821   1.753    0.222
+NMAN            0.12534    0.18927   0.662    0.576
+poly(GOV, 2)1   1.33967   48.34475   0.028    0.980
+poly(GOV, 2)2  40.96870   38.86995   1.054    0.402
+poly(HE, 3)1  -42.82354   75.21346  -0.569    0.627
+poly(HE, 3)2   -3.68839   10.90049  -0.338    0.767
+poly(HE, 3)3   -3.24754    7.03880  -0.461    0.690
+WE              0.54739    0.55821   0.981    0.430
+ASR            -0.02719    0.03734  -0.728    0.542
+
+Residual standard error: 1.23 on 2 degrees of freedom
+Multiple R-squared:  0.9991,	Adjusted R-squared:  0.9944 
+F-statistic: 212.7 on 10 and 2 DF,  p-value: 0.004688
+````
 </center>
 
 
