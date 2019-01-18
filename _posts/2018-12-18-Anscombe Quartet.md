@@ -137,3 +137,4 @@ F-statistic:    18 on 1 and 9 DF,  p-value: 0.002165
 #### All of the Graph(s) I - IV
 
 ![](/img/fig_anscombe_R.pdf)
+
