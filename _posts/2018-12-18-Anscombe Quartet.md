@@ -73,7 +73,9 @@ Residual standard error: 1.237 on 9 degrees of freedom
 Multiple R-squared:  0.6662,	Adjusted R-squared:  0.6292 
 F-statistic: 17.97 on 1 and 9 DF,  p-value: 0.002179
 ````
+#### Graph Set II
 
+![](/img/anscombe_set_two.png)
 #### Set III
 
 ````
@@ -100,6 +102,8 @@ Residual standard error: 1.236 on 9 degrees of freedom
 Multiple R-squared:  0.6663,	Adjusted R-squared:  0.6292 
 F-statistic: 17.97 on 1 and 9 DF,  p-value: 0.002176
 ````
+#### Graph Set III
+![](/img/anscombe_set_three.png)
 
 #### Set IV
 
@@ -127,3 +131,5 @@ Residual standard error: 1.236 on 9 degrees of freedom
 Multiple R-squared:  0.6667,	Adjusted R-squared:  0.6297 
 F-statistic:    18 on 1 and 9 DF,  p-value: 0.002165
 ````
+#### Graph Set IV
+![](/img/anscombe_set_four.png)
