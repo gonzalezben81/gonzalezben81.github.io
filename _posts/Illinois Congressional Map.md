@@ -134,6 +134,8 @@ Now lets read in our csv files that have the data on our state congressional mem
 ````
 {r,warning=FALSE,message=FALSE}
 ##Reads in CSV
+
+````
     illinois_senate <- read.csv("C:/Users/Ben/Desktop/Illinois/illinoisstatesenators.csv",
                             stringsAsFactors = FALSE)
 
@@ -272,7 +274,10 @@ We will now create our map using the leaflet package in R. We will add different
 
 ````
 
+
+
 ## Congratulations!!!!!! 
 
 ### You have successfully created an interactive map in R Studio you can share with other people. 
 
+![](/img/illinois_congressional_map.png)
