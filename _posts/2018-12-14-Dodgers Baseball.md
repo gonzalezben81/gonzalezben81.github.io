@@ -127,7 +127,7 @@ Dodgers Linear Models: Single Giveaways
 |:----|:-----------------|:-----------------|:------|:-----------------------------|
 |Bobblehead Linear Model|0.54|0.46|2.083e-7|10715|
 |Cap Linear Model|0.45|0.34|4.439-e05|-10983|
-|Fireworkd Linear Model|0.45|0.34|4.593e-05|15658|
+|Fireworks Linear Model|0.45|0.34|4.593e-05|15658|
 |Shirt Linear Model|0.42|0.31|0.0001687|4720|
 
 Utilizing linear regression with one promotional item shows that utilizing bobblehead’s
