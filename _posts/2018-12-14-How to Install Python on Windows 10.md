@@ -6,7 +6,7 @@ bigimg: /img/python.png
 date: "December 14 , 2018"
 ---
 
-### Download the version of Python you want to uses
+### Download the version of Python you want to use
 
 Click the link below to download **Python 3.7** -- this is the current release. 
 
