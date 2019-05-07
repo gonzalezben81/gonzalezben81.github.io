@@ -1,0 +1,1347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Gonzalez Analytics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="myscripts.js"></script>
+  <link rel="stylesheet" type="text/css" href="rgonzo.css">
+  <style>
+      .jumbotron{
+  margin-top: 20px;
+  background-size: cover;
+  background-color: lightblue;
+  color: white;
+  height: 80%;
+}
+    #myCarousel{
+      border: 1px solid black;
+      color: black;
+    }
+
+</style>
+
+</head>
+<body style="background-color:white;">
+
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="index.html">Gonzalez Analytics</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="index.html">Home</a></li>
+      <li><a href="applications.html">Shiny Applications</a></li>
+      <li><a >R Tutorials</a></li>
+      <li><a href="regexpressions.html">Regular Expressions</a></li>
+      <li><a href="books.html">Reference Books</a></li>
+      <li><a href="python.html">Python References</a></li>
+      <li><a href="dodgers.html">Baseball Analytics</a></li>
+      <li><a href="textmining.html">Text Analytics</a></li>
+      <li><a href="nlp.html">Natura Language Processing</a></li>
+      <li><a href="detroit.html">Crime Prediction</a></li>
+    </ul>
+<!---    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>--->
+  </div>
+</nav>
+<!---Jumbotron--->
+<div class="jumbotron">
+  <center>
+  <h2>Predicting Student Performance</h2> 
+  </center>
+</div>
+<div class="container">
+  <center><h3>Introduction: Student Performance Dataset</h3></center>
+  <p>The Student Performance Dataset is from a study of secondary education of two Portuguese schools.
+The data was collected via school reports and questionnaires. G3 or the final grade is the main outcome
+variable for the dataset. The data was obtained from the UCI Machine Learning Repository and can be
+found at: <a href="http://archive.ics.uci.edu/ml/datasets/Student+Performance">http://archive.ics.uci.edu/ml/datasets/Student+Performance</a>. The following table lists each variable and their descriptions. </p>
+
+<div class="container">
+  <style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+    <center><h3>Student Performance Dataset</h3></center>
+            <p>Type in the variable search term below:</p>
+<input type="text" id="myInput20"  placeholder="Search for variable.." title="Type in a variable">  
+  <table class="table" id="myTable20">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Variable</th>
+        <th onclick="sortTable(2)">Scale</th>
+        <th onclick="sortTable(1)">Predictor/Output</th>
+        <th onclick="sortTable(1)">Measurement</th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr>
+    <td >School</td>
+    <td >GP or MS</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Sex(Male or Female)</td>
+    <td >F or M</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Age</td>
+    <td >15 to 22</td>
+    <td >Predictor</td>
+    <td >Quantitative</td>
+  </tr>
+  <tr>
+    <td >Address(Urban or Rural)</td>
+    <td >U or R</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Famesize(Family Size)</td>
+    <td >LE3 or GT3</td>
+    <td >Predictor</td>
+    <td >Quantitative</td>
+  </tr>
+  <tr>
+    <td >Pstatus(Parent Cohabitation)</td>
+    <td >T-living together / A-Apart</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Medu(Mothers education)</td>
+    <td >0 to 4</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Fedu (Fathers Education)</td>
+    <td >0 to 4</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Mjob(Mothers job)</td>
+    <td >Nominal</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Fjob(Fathers job)</td>
+    <td >Nominal</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Reason(reason school chose)</td>
+    <td >Nominal</td>
+    <td >Predictor/Output</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Guardian(student’s guardian)</td>
+    <td >Mother/father/Other</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Traveltime(home, to school, traveltime)</td>
+    <td >1 to 4</td>
+    <td >Predictor</td>
+    <td >Quantitative</td>
+  </tr>
+  <tr>
+    <td >Studytime(Weekly study time)</td>
+    <td >1 to 4</td>
+    <td >Predictor/Output</td>
+    <td >Quantitative</td>
+  </tr>
+  <tr>
+    <td >Failures(number of past class failures)</td>
+    <td >1 to 4</td>
+    <td >Predictor</td>
+    <td >Quantitative</td>
+  </tr>
+  <tr>
+    <td >Schoolsup(extra educational support)</td>
+    <td >Yes or No</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Famsup(family educational support)</td>
+    <td >Yes or No</td>
+    <td >Predictor/Output</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Paid(extra paid classes within the coursesubject)</td>
+    <td >Yes or No</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Activities(exra-curricular activities)</td>
+    <td >Yes or No</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Nursery(attended nursery school)</td>
+    <td >Yes or No</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Higher(wants to take higher education)</td>
+    <td >Yes or No</td>
+    <td >Predictor/Output</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Internet(internet access at home)</td>
+    <td >Yes or No</td>
+    <td >Predictor/Output</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Romantic(in a romantic relationship)</td>
+    <td >Yes or No</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Famrel(Quality of family relationships)</td>
+    <td >1 to 5</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Freetime(free time after school)</td>
+    <td >1 to 5</td>
+    <td >Predictor/Output</td>
+    <td >Quantitative</td>
+  </tr>
+  <tr>
+    <td >Goout(going out with friends)</td>
+    <td >1 to 5</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Dalc(workday alcohol consumption)</td>
+    <td >1 to 5</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Walc(weekend alcohol consumption)</td>
+    <td >1 to 5</td>
+    <td >Predictor/Output</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Health(current health status)</td>
+    <td >1 to 5</td>
+    <td >Predictor</td>
+    <td >Qualitative</td>
+  </tr>
+  <tr>
+    <td >Absences(number of school absences)</td>
+    <td >0 to 93</td>
+    <td >Predictor</td>
+    <td >Quantitative</td>
+  </tr>
+  <tr>
+    <td >G1(First Period Grade)</td>
+    <td >0 to 20</td>
+    <td >Predictor/Output</td>
+    <td >Quantitative</td>
+  </tr>
+  <tr>
+    <td >G2(Second Period Grade)</td>
+    <td >0 to 20</td>
+    <td >Predictor/Output</td>
+    <td >Quantitative</td>
+  </tr>
+  <tr>
+    <td >G3(Final Grade)</td>
+    <td >0 to 20</td>
+    <td >Output</td>
+    <td >Quantitative</td>
+  </tr>
+    </tbody>
+     </table>
+</div>
+<h3><center>Student Peformance Summary Statistics</center></h3>
+<pre><code>> summary(Student_Performance_Ben_Gonzalez)
+ school   sex          age       address famsize   Pstatus      Medu            Fedu             Mjob    
+ GP:349   F:208   Min.   :15.0   R: 88   GT3:281   A: 41   Min.   :0.000   Min.   :0.000   at_home : 59  
+ MS: 46   M:187   1st Qu.:16.0   U:307   LE3:114   T:354   1st Qu.:2.000   1st Qu.:2.000   health  : 34  
+                  Median :17.0                             Median :3.000   Median :2.000   other   :141  
+                  Mean   :16.7                             Mean   :2.749   Mean   :2.522   services:103  
+                  3rd Qu.:18.0                             3rd Qu.:4.000   3rd Qu.:3.000   teacher : 58  
+                  Max.   :22.0                             Max.   :4.000   Max.   :4.000                 
+       Fjob            reason      guardian     traveltime      studytime        failures      schoolsup famsup   
+ at_home : 20   course    :145   father: 90   Min.   :1.000   Min.   :1.000   Min.   :0.0000   no :344   no :153  
+ health  : 18   home      :109   mother:273   1st Qu.:1.000   1st Qu.:1.000   1st Qu.:0.0000   yes: 51   yes:242  
+ other   :217   other     : 36   other : 32   Median :1.000   Median :2.000   Median :0.0000                      
+ services:111   reputation:105                Mean   :1.448   Mean   :2.035   Mean   :0.3342                      
+ teacher : 29                                 3rd Qu.:2.000   3rd Qu.:2.000   3rd Qu.:0.0000                      
+                                              Max.   :4.000   Max.   :4.000   Max.   :3.0000                      
+  paid     activities nursery   higher    internet  romantic      famrel         freetime         goout      
+ no :214   no :194    no : 81   no : 20   no : 66   no :263   Min.   :1.000   Min.   :1.000   Min.   :1.000  
+ yes:181   yes:201    yes:314   yes:375   yes:329   yes:132   1st Qu.:4.000   1st Qu.:3.000   1st Qu.:2.000  
+                                                              Median :4.000   Median :3.000   Median :3.000  
+                                                              Mean   :3.944   Mean   :3.235   Mean   :3.109  
+                                                              3rd Qu.:5.000   3rd Qu.:4.000   3rd Qu.:4.000  
+                                                              Max.   :5.000   Max.   :5.000   Max.   :5.000  
+      Dalc            Walc           health         absences            G1              G2              G3       
+ Min.   :1.000   Min.   :1.000   Min.   :1.000   Min.   : 0.000   Min.   : 3.00   Min.   : 0.00   Min.   : 0.00  
+ 1st Qu.:1.000   1st Qu.:1.000   1st Qu.:3.000   1st Qu.: 0.000   1st Qu.: 8.00   1st Qu.: 9.00   1st Qu.: 8.00  
+ Median :1.000   Median :2.000   Median :4.000   Median : 4.000   Median :11.00   Median :11.00   Median :11.00  
+ Mean   :1.481   Mean   :2.291   Mean   :3.554   Mean   : 5.709   Mean   :10.91   Mean   :10.71   Mean   :10.42  
+ 3rd Qu.:2.000   3rd Qu.:3.000   3rd Qu.:5.000   3rd Qu.: 8.000   3rd Qu.:13.00   3rd Qu.:13.00   3rd Qu.:14.00  
+ Max.   :5.000   Max.   :5.000   Max.   :5.000   Max.   :75.000   Max.   :19.00   Max.   :19.00   Max.   :20.00 </code></pre>
+<hr>
+  <center><h3>Student Peformance Dataset Methods of Analysis:</h3></center>
+  <p><strong>Overview:</strong> For the Student Performance Dataset I utilized several modeling techniques (Simple Linear
+Regression, Multiple Linear Regression, Subset Selection, and Generalized Additive Models). Correlation
+models were not utilized as many of the predictors are qualitative while the outcome variable is
+quantitative. The utilization of the plot function helped to determine what variables in the dataset
+would be significant and also of those which would not be significant. While classification models (LDA,
+QDA, and KNN) are useful for this dataset they were only able to be utilized sparingly due to the
+continuous nature of the outcome variable. For several variables the outcome and predictor variables
+were switched with the outcome variable of G3 to get some sense of the predictive capabilities of the
+Logisitic Regression, QDA, and LDA modeling techniques. The classification models also did not allow for
+the interpretability of all of the variables for this particular dataset. KNN was ignored due to the fact it
+would over fit the data due to the small nature of the dataset itself</p>
+<h3><center>Student Performance-Simple Linear Regression Table</center></h3>
+<div class="container">
+        <p>Type in the variable search term below:</p>
+<input type="text" id="myInput21"  placeholder="Search for variable.." title="Type in a variable">  
+  <table class="table" id="myTable21">
+    <thead>
+      <tr>
+        <th onclick="sortTable(0)">Model</th>
+        <th onclick="sortTable(2)">Learning Technique</th>
+        <th onclick="sortTable(1)">Variables Used</th>
+        <th onclick="sortTable(1)">Coefficient(s)</th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr>
+    <td>Model 1</td>
+    <td>  Simple Linear Regression</td>
+    <td> G3~SchoolMS</td>
+    <td> -0.6421</td>
+  </tr>
+  <tr>
+    <td>Model 2</td>
+    <td>  Simple Linear Regression</td>
+    <td> G3~Sex</td>
+    <td> 0.9481</td>
+  </tr>
+  <tr>
+    <td>Model 3</td>
+    <td>  Simple Linear Regression</td>
+    <td> G3~addressU</td>
+    <td> 1.163</td>
+  </tr>
+  <tr>
+    <td>Model 4</td>
+    <td>  Simple Linear Regression</td>
+    <td> G3~famsize</td>
+    <td> 0.8221</td>
+  </tr>
+  <tr>
+    <td>Model 5</td>
+    <td>  Simple Linear Regression</td>
+    <td> G3~PstatusT</td>
+    <td> -0.8703</td>
+  </tr>
+  <tr>
+    <td>Model 6</td>
+    <td>  Simple Linear Regression</td>
+    <td> G3~Medu</td>
+    <td> 0.9088</td>
+  </tr>
+  <tr>
+    <td>Model 7</td>
+    <td>  Simple Linear Regression</td>
+    <td> G3~Fedu</td>
+    <td> 0.6419</td>
+  </tr>
+  <tr>
+    <td>Model 8</td>
+    <td>  Simple Linear Regression</td>
+    <td> G3~Mjob</td>
+    <td> MjobHealth=2.9945</br>
+    </br>
+    Mjobother=0.6702</br>
+    </br>
+    Mjobservices=1.8669</br>
+    </br>
+    Mjobteacher=1.8992</td>
+  </tr>
+  <tr>
+    <td>Model 9</td>
+    <td>  Simple Linear Regression</td>
+    <td> G3~Fjob</td>
+    <td> Fjobhealth=1.46111</br>
+    </br>
+    Fjobother=0.04355</br>
+    </br>
+    Fjobservices=0.14730</br>
+    </br>
+    Fjobteacher=1.81552</td>
+  </tr>
+  <tr>
+    <td>Model 10</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~reason</td>
+    <td> Reasonhome=0.4362</br>
+    </br>
+    Reasonother=1.3460</br>
+    </br>
+    Reasonreputation=1.3222</td>
+  </tr>
+  <tr>
+    <td>Model 11</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~guardian</td>
+    <td> Guardianmother=-0.2504</br>
+    </br>
+         Guardianother=-1.6264</td>
+  </tr>
+  <tr>
+    <td>Model 12</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~traveltime</td>
+    <td> -0.7694</td>
+  </tr>
+  <tr>
+    <td>Model 13</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~studytime</td>
+    <td> 0.534</td>
+  </tr>
+  <tr>
+    <td>Model 14</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~failures</td>
+    <td> -2.22</td>
+  </tr>
+  <tr>
+    <td>Model 15</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~schoolsup</td>
+    <td> Schoolsupyes=-1.13</td>
+  </tr>
+  <tr>
+    <td>Model 16</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~famsup</td>
+    <td> Famsupyes=-0.3678</td>
+  </tr>
+  <tr>
+    <td>Model 17</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~paid</td>
+    <td> Paidyes=0.9367</td>
+  </tr>
+  <tr>
+    <td>Model 18</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~activities</td>
+    <td> Activitiesyes=0.1474</td>
+  </tr>
+  <tr>
+    <td>Model 19</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~nursery</td>
+    <td> Nurseryyes=0.5844</td>
+  </tr>
+  <tr>
+    <td>Model 20</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~higher</td>
+    <td> Higheryes=3.808</td>
+  </tr>
+  <tr>
+    <td>Model 21</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~internet</td>
+    <td> Internetyes=1.208</td>
+  </tr>
+  <tr>
+    <td>Model 22</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~romantic</td>
+    <td> Romanticsyes=-1.261</td>
+  </tr>
+  <tr>
+    <td>Model 23</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~famrel</td>
+    <td> 0.2624</td>
+  </tr>
+  <tr>
+    <td>Model 24</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~freetime</td>
+    <td> 0.05186</td>
+  </tr>
+  <tr>
+    <td>Model 25</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~goout</td>
+    <td> -0.5465</td>
+  </tr>
+  <tr>
+    <td>Model 26</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~Dalc</td>
+    <td> -0.2811</td>
+  </tr>
+  <tr>
+    <td>Model 27</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~Walc</td>
+    <td> -0.1848</td>
+  </tr>
+  <tr>
+    <td>Model 28</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~health</td>
+    <td> -0.2021</td>
+  </tr>
+  <tr>
+    <td>Model 29</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~absences</td>
+    <td> 0.01961</td>
+  </tr>
+  <tr>
+    <td>Model 30</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~G1</td>
+    <td> 1.106</td>
+  </tr>
+  <tr>
+    <td>Model 31</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~G2</td>
+    <td> 1.102</td>
+  </tr>
+  <tr>
+    <td>Model 32</td>
+    <td> Simple Linear Regression</td>
+    <td> G3~age</td>
+    <td> -0.5801</td>
+  </tr>
+    </tbody>
+     </table>
+</div>
+<p><strong>Best Model Simple Linear Regression:</strong> The best model for simple linear regression is Model 8 for mjob.
+The coefficient of MjobHealth has the highest level 2.9945 that will increase the outcome variable of G3. </p>
+
+<h4>R-Output</h4>
+<pre><code>> schoolmodel.8
+Call:
+lm(formula = G3 ~ Mjob, data = Student_Performance_Ben_Gonzalez)
+Coefficients:
+(Intercept) Mjobhealth Mjobother Mjobservices Mjobteacher
+ 9.1525 2.9945 0.6702 1.8669 1.8992 </code></pre>
+ <center>
+ <img src="img/mothersjob.png">
+</center>
+<hr>
+<div class="container">
+  
+  </hr>
+  <h3><center>Student Performance-Multiple Linear Regression Table</center></h3>
+        <p>Type in the variable search term below:</p>
+<input type="text" id="myInput22"  placeholder="Search for variable.." title="Type in a variable">  
+  <table class="table" id="myTable22">
+    <thead>
+      <tr>
+    <th>Model</th>
+    <th> Learning Technique</th>
+    <th> Variables Used</th>
+    <th> Adjusted R<sup>2</sup></th>
+    <th> P-Value</th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr>
+    <td>Model 33</td>
+    <td> Multiple Linear Regression</td>
+    <td>Outcome=G3Predictors=All othervariables</td>
+    <td>0.827</td>
+    <td>2.20E-16</td>
+  </tr>
+  <tr>
+    <td>Model 34</td>
+    <td> Multiple Linear Regression</td>
+    <td>Outcome=G3Predictors=Fjob,Mjob,G2G1,absences,famrel,Activities,age</td>
+    <td>0.83</td>
+    <td>2.20E-16</td>
+  </tr>
+  <tr>
+    <td>Model 35</td>
+    <td> Multiple Linear Regression</td>
+    <td>Outcome=G3Predictors= G2, G1,Absences, age,Activities, mjob</td>
+    <td>0.8262</td>
+    <td>2.20E-16</td>
+  </tr>
+    </tbody>
+     </table>
+</div>
+
+<p><strong>Best Model Multiple Linear Regression:</strong> The best model for multiple linear regression is Model 34. The
+model has the highest adjusted r-squared 0.83 and has a p-value of 2.2e-16. </p>
+<button onclick="topFunction()" id="myBtn" title="Go to top">Scroll to Top</button>
+
+<h4>R-Output:</h4>
+<pre><code>> summary(studenmodel.2)
+Call:
+lm(formula = G3 ~ Fjob + Mjob + G2 + G1 + absences + famrel +
+ activities + age, data = Student_Performance_Ben_Gonzalez)
+Residuals:
+ Min 1Q Median 3Q Max
+-8.7249 -0.4813 0.3266 1.0366 4.1175
+Coefficients:
+ Estimate Std. Error t value Pr(>|t|)
+(Intercept) -0.119993 1.508999 -0.080 0.936662
+Fjobhealth 0.409542 0.633288 0.647 0.518222
+Fjobother 0.191078 0.450705 0.424 0.671840
+Fjobservices -0.218778 0.468459 -0.467 0.640756
+Fjobteacher 0.039987 0.561466 0.071 0.943261
+Mjobhealth 0.007434 0.421358 0.018 0.985933
+Mjobother 0.035604 0.299174 0.119 0.905331
+Mjobservices 0.135151 0.315477 0.428 0.668601
+Mjobteacher 0.166370 0.362091 0.459 0.646159
+G2 0.981361 0.050065 19.602 < 2e-16 ***
+G1 0.156834 0.057144 2.745 0.006347 **
+absences 0.043203 0.012128 3.562 0.000415 ***
+famrel 0.368475 0.107646 3.423 0.000687 ***
+activitiesyes -0.343471 0.193128 -1.778 0.076127 .
+age -0.200841 0.078544 -2.557 0.010944 *
+---
+Signif. codes: 0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+Residual standard error: 1.884 on 380 degrees of freedom
+Multiple R-squared: 0.8368, Adjusted R-squared: 0.8308
+F-statistic: 139.2 on 14 and 380 DF, p-value: < 2.2e-16
+</code></pre>
+
+<hr>
+
+<h3><center>Student Performance-Validation Set Approach</center></h3>
+        <p>Type in the variable search term below:</p>
+<input type="text" id="myInput23"  placeholder="Search for variable.." title="Type in a variable">  
+  <table class="table" id="myTable23">
+    <thead>
+      <tr>
+    <th>Model</th>
+    <th>Learning Technique</th>
+    <th>Variables Used</th>
+    <th>Mean of Squared Residuals</th>
+    <th>Minimum MSE</th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr>
+    <td>Model 35</td>
+    <td> Cross ValidationApproach</td>
+    <td>Outcome=G3 Predictors=All other variables</td>
+    <td>MSE= 4.248499</td>
+    <td>4.248499</td>
+  </tr>
+  <tr>
+    <td>Model 36</td>
+    <td> K-Fold Cross Validation</td>
+    <td>Outcome=G3 Predictor=G2</td>
+    <td> </td>
+    <td>3.735935</td>
+  </tr>
+  <tr>
+    <td>Model 37</td>
+    <td> LOOCV Outcome=G3 Predictors= All other variables</td>
+    <td> </td>
+    <td>4.074051</td>
+    <td></td>
+  </tr>
+    </tbody>
+     </table>
+<hr>
+
+<p><strong>Best Model Validation Set Approach:</strong> The best model for the validation set approach is Model 36 K-Fold
+Cross Validation. The model has the lowest MSE of 3.735935. </p>
+
+<h4>R-Output:</h4>
+<pre><code>> cv.error
+[1] 3.828677 3.817115 3.742704 3.735935 3.751337</code></pre>
+
+<hr>
+
+<h3><center>Student Performance-Tree Based Methods</center></h3>
+        <p>Type in the variable search term below:</p>
+<input type="text" id="myInput24"  placeholder="Search for variable.." title="Type in a variable">  
+  <table class="table" id="myTable24">
+    <thead>
+      <tr>
+    <th>Model</th>
+    <th>Learning Technique</th>
+    <th>Variables Used</th>
+    <th>Mean of Squared Residuals</th>
+    <th>Minimum MSE</th>
+    <th>% Variance Explained</th>
+    <th>Optimal Configuration</th>
+    <th>OptimalTrees/Interaction F-Statistic</th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr>
+    <td>Model 38</td>
+    <td> Random Forest</td>
+    <td>Outcome=G3 Predictors=All other variables</td>
+    <td>MSE=3.397405</td>
+    <td>24.23154</td>
+    <td> 83.39</td>
+    <td> 10 Predictors</td>
+    <td> 1 Trees</td>
+  </tr>
+  <tr>
+    <td>Model 40</td>
+    <td>Random Forest K-Fold CV Approach</td>
+    <td>Outcome=G3 Predictors=All other Variables</td>
+    <td>3.397405</td>
+    <td>1.951061</td>
+    <td> 83.39</td>
+    <td> 20 Predictors</td>
+    <td> 9 Trees</td>
+  </tr>
+  <tr>
+    <td>Model 41</td>
+    <td>Random Forest Boosting K-Fold CVApproach</td>
+    <td>Outcome= G3 Predictor= All other Variables</td>
+    <td></td>
+    <td>16.27524</td>
+    <td> 9 predictors had a nonzeroinfluence</td>
+    <td>Optimal number of Trees 7</td>
+    <td>Optimal Interaction Depth 3</td>
+  </tr>
+  <tr>
+    <td>Model 42</td>
+    <td>Linear Model K-Fold CV Approach</td>
+    <td>Outcome= G3 Predictor= All other Variables</td>
+    <td>P-value=2.2e-16</td>
+    <td>4132.434</td>
+    <td> Adjusted R<sup>2</sup>=0.8194</td>
+    <td>Multiple R<sup>2</sup>=0.8572</td>
+    <td>F-Statistic= 22.69</td>
+  </tr>
+    </tbody>
+     </table>
+     
+     <hr>
+     
+     <p><strong>Best Model Tree-Based Methods:</strong> The best model is Model 40 it has the lowest MSE of all of the
+approaches. The model also has one of the largest variances explained at 83.39%. While it has 20
+predictors and 9 trees this is minimized due to the low MSE of the model. </p>
+
+<h4>R-Output:</h4>
+<pre><code>> model.bagged.2
+Call:
+randomForest(formula = G3 ~ ., data = Student_Performance_Ben_Gonzalez,
+mtry = numpreds, ntree = numtrees, importance = TRUE, subset = train)
+ Type of random forest: regression
+ Number of trees: 10
+No. of variables tried at each split: 32
+ Mean of squared residuals: 3.397405
+ % Var explained: 83.39
+> min(lstMSEs)
+[1] 1.951061</code></pre>
+
+<hr>
+
+<h3><center>Student Performance- Subset Selection Methods-Forward/Backward/NVMAX</center></h3>
+        <p>Type in the variable search term below:</p>
+<input type="text" id="myInput25"  placeholder="Search for variable.." title="Type in a variable">  
+  <table class="table" id="myTable25">
+    <thead>
+      <tr>
+    <th>Model</th>
+    <th>Learning Technique</th>
+    <th>Variables Used</th>
+    <th>RSQ</th>
+    <th>Adjusted R<sup>2</sup></th>
+    <th>Min BIC</th>
+      </tr>
+    </thead>
+    <tbody>
+  <tr>
+    <td>Model 43</td>
+    <td> Subset Model Selection One</td>
+    <td>Outcome=G3 Predictors=All other Variables</td>
+    <td>0.837</td>
+    <td>0.834</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>Model 44</td>
+    <td>Subset Model Selection Two-Forward</td>
+    <td>Outcome=G3 Predictors=All other Variables</td>
+    <td>0.845</td>
+    <td>0.831</td>
+    <td>5</td>
+  </tr>
+  <tr>
+    <td>Model 45</td>
+    <td>Subset Model Selection Three-Backward</td>
+    <td>Outcome=G3 Predictors=Allother Variables </td>
+    <td>0.845</td>
+    <td>0.8365</td>
+    <td>5</td>
+  </tr>
+    </tbody>
+     </table>
+<hr>
+<p>Best Model Subset Selection: The best model is Model 45 it has a BIC of 5 and the highest adjusted
+r-squared 0.8365.</p>
+
+<h4>R-Output:</h4>
+<pre><code>> student.summary3$adjr2
+[1] 0.8183250 0.8224978 0.8264537 0.8289151 0.8314632 0.8326033 0.8337533 0.
+8346263 0.8352697 0.8358128
+[11] 0.8363263 0.8365028 0.8365416 0.8363004 0.8362920 0.8362409 0.8361633 0.
+8360635 0.8359323 0.8357703
+[21] 0.8355427 0.8353416 0.8351001 0.8348176 0.8344913 0.8341480 0.8338058 0.
+8334593 0.8331049 0.8327369
+[31] 0.8323729 0.8319962
+> which.min(student.summary3$bic)
+[1] 5
+> which.max(student.summary3$adjr2)
+[1] 13
+> which.min(student.summary3$rss)
+[1] 32</code></pre>
+
+ <center>
+ <img src="img/model3bic.png">
+</center>
+
+ <center>
+ <img src="img/model3adjustr.png">
+</center>
+
+ <center>
+ <img src="img/model3rss.png">
+</center>
+
+<h3><center>Student Performance-Generalized Additive Models</center></h3>
+        <p>Type in the variable search term below:</p>
+<input type="text" id="myInput26"  placeholder="Search for variable.." title="Type in a variable">  
+  <table class="table" id="myTable26">
+    <thead>
+      <tr>
+    <th>Model</th>
+    <th>LearningTechnique</th>
+    <th>Variables Used</th>
+    <th>Multiple R<sup>2</sup> </th>
+    <th>Adjusted R<sup>2</sup> </th>
+    <th>P-value</th>
+    </thead>
+    <tbody>
+  <tr>
+    <td>Model 46</td>
+    <td> Generalized Additive Model Spline Based Regression</td>
+    <td>Outcome=G3 Predictors=Activities Age Famrel Absences G1 G2</td>
+    <td>0.8351</td>
+    <td>0.8326</td>
+    <td>2.2e-16</td>
+  </tr>
+  <tr>
+    <td>Model 47</td>
+    <td>Generalized Additive Model Polynomial Regression to 2nd Power</td>
+    <td>Outcome= G3 Predictors=Activities Age^2 Famrel^2 Absences^2 G1^2 G2</td>
+    <td>0.8433</td>
+    <td>0.8392</td>
+    <td> 2.2e-16</td>
+  </tr>
+  <tr>
+    <td>Model 48</td>
+    <td> Generalized Additive Model Polynomial Regression to 3rd Power</td>
+    <td>Outcome=G3 Predictors=Activities Age^3 Famrel^3 Absences^3 G1^3 G2</td>
+    <td>0.8514</td>
+    <td>0.8459</td>
+    <td> 2.2e=16</td>
+  </tr>
+  <tr>
+    <td>Model 49</td>
+    <td> Generalized Additive Model Polynomial Regression</td>
+    <td>Outcome=G3Predictors=ActivitiesAge^7 Famrel Absences^4 G1 G2 </td>
+    <td>0.8541</td>
+    <td>0.8483</td>
+    <td> 2.2e-16</td>
+  </tr>
+    </tbody>
+     </table>
+     
+     <hr>
+     
+
+     
+     <p><strong>Best Model:</strong> The best model for logistic regression predictions is Model 50. The model is able to
+accurately predict schoolsup from G3 0.87 percent of the time</p>
+     
+     <p><strong>Best Model Generalized Additive Models:</strong> The best model for the generalized additive models is Model
+49 and is a GAM that utilizes polynomial regression. Model 49 has an adjusted r-squared of 0.8483 and a
+p-value of 2.2e-16. </p>
+
+
+<center>
+<img src="img/gam.png"/>
+</center>
+<div class="container" id="mystuff">
+  
+  <center>
+<img src="img/gamone.png"/>
+</center>
+<div class="container" id="mystuff">
+  
+  <center>
+<img src="img/gamtwo.png"/>
+</center>
+<div class="container" id="mystuff">
+  
+  <center>
+<img src="img/gamthree.png"/>
+</center>
+<div class="container" id="mystuff">
+  
+  <center>
+<img src="img/gamfour.png"/>
+</center>
+<div class="container" id="mystuff">
+  
+  <center>
+<img src="img/gamfive.png"/>
+</center>
+
+
+     <h3><center>Student Performance- Classification-Logistic Regression Model Table</center></h3>
+             <p>Type in the variable search term below:</p>
+<input type="text" id="myInput27"  placeholder="Search for variable.." title="Type in a variable">  
+  <table class="table" id="myTable27">
+    <thead>
+    <th>Model</th>
+    <th>Learning Technique</th>
+    <th>Variables Used</th>
+    <th>Correct Predictions</th>
+    <th>Test Error</th>
+    </thead>
+    <tbody>
+  <tr>
+    <td>Model 50</td>
+    <td>Logistic RegressionGLM</td>
+    <td>Outcome=schoolsup Predictor=G3 </td>
+    <td>0.87</td>
+    <td>0.13</td>
+  </tr>
+  <tr>
+    <td>Model 51</td>
+    <td>Logistic RegressionGLM</td>
+    <td>Outcome=famsup Predictor=G3</td>
+    <td>0.39</td>
+    <td>0.61</td>
+  </tr>
+  <tr>
+    <td>Model 52</td>
+    <td>Logistic RegressionGLM</td>
+    <td>Outcome=Paid Predictor=G3</td>
+    <td>0.54</td>
+    <td>0.46</td>
+  </tr>
+  <tr>
+    <td>Model 53</td>
+    <td>Logistic RegressionGLM</td>
+    <td>Outcome=Activities Predictor=G3</td>
+    <td>0.49</td>
+    <td>0.51</td>
+  </tr>
+  <tr>
+    <td>Model 54</td>
+    <td>Logistic RegressionGLM</td>
+    <td>Outcome=Nursery Predictor=G3</td>
+    <td>0.21</td>
+    <td>0.79</td>
+  </tr>
+  <tr>
+    <td>Model 55</td>
+    <td>Logistic RegressionGLM</td>
+    <td>Outcome=Higher Predictor=G3</td>
+    <td>0.05</td>
+    <td>0.95</td>
+  </tr>
+  <tr>
+    <td>Model 56</td>
+    <td>Logistic RegressionGLM</td>
+    <td>Outcome=Internet Predictor=G3</td>
+    <td>0.16</td>
+    <td>0.83</td>
+  </tr>
+  <tr>
+    <td>Model 57</td>
+    <td>Logistic RegressionGLM</td>
+    <td>Outcome=Romantic Predictor=G3</td>
+    <td>0.67</td>
+    <td>0.33</td>
+  </tr>
+    </tbody>
+     </table>
+     
+     <hr>
+     
+     <h3><center>Student Performance- QDA Model Table</center></h3>
+     
+                  <p>Type in the variable search term below:</p>
+<input type="text" id="myInput28"  placeholder="Search for variable.." title="Type in a variable">  
+  <table class="table" id="myTable28">
+    <thead>
+    <th>Model</th>
+    <th>Learning Technique</th>
+    <th>Variables Used</th>
+    <th>QDA Prediction %</th>
+    </tr>
+    </thead>
+    <tbody>
+  <tr>
+    <td>Model 58</td>
+    <td>QDA</td>
+    <td>Outcome=schoolsup Predictor=G3</td>
+    <td>0.87</td>
+  </tr>
+  <tr>
+    <td>Model 59</td>
+    <td>QDA</td>
+    <td>Outcome=famsup Predictor=G3</td>
+    <td>0.38</td>
+  </tr>
+  <tr>
+    <td>Model 60</td>
+    <td>QDA</td>
+    <td>Outcome=Paid Predictor=G3</td>
+    <td>0.55</td>
+  </tr>
+  <tr>
+    <td>Model 61</td>
+    <td>QDA</td>
+    <td>Outcome=Activities Predictor=G3</td>
+    <td>0.51</td>
+  </tr>
+  <tr>
+    <td>Model 62</td>
+    <td>QDA</td>
+    <td>Outcome=Nursery Predictor=G3</td>
+    <td>0.79</td>
+  </tr>
+  <tr>
+    <td>Model 63</td>
+    <td>QDA</td>
+    <td>Outcome=Higher Predictor=G3</td>
+    <td>0.67</td>
+  </tr>
+  <tr>
+    <td>Model 64</td>
+    <td>QDA</td>
+    <td>Outcome=Internet Predictor=G3</td>
+    <td>0.83</td>
+  </tr>
+  <tr>
+    <td>Model 65</td>
+    <td>QDA</td>
+    <td>Outcome=Romantic Predictor=G3</td>
+    <td>0.67</td>
+  </tr>
+    </tbody>
+     </table>
+     
+     <hr>
+     <p><strong>Best Model QDA:</strong> The best model for QDA is Model 58. QDA is able to correctly predict schoolsup from
+G3 87% of the time. </p>
+
+<h4>R-Output:</h4>
+<pre><code>> mean(qda.class1==schoolsup)
+[1] 0.8708861</code></pre>
+
+<img src="img/qda.png">  
+<hr>
+
+
+     <h3><center>Student Performance- LDA Model Table</center></h3>
+     
+                  <p>Type in the variable search term below:</p>
+<input type="text" id="myInput29"  placeholder="Search for variable.." title="Type in a variable">  
+  <table class="table" id="myTable29">
+    <thead>
+    <th>Model</th>
+    <th> Learning Technique</th>
+    <th> Variables Used</th>
+    <th> LDA Prediction %</th>
+    </tr>
+    </thead>
+    <tbody>
+  <tr>
+    <td>Model 66</td>
+    <td> LDA</td>
+    <td> Outcome=schoolsup Predictor=G3</td>
+    <td>0.87</td>
+  </tr>
+  <tr>
+    <td>Model 67</td>
+    <td> LDA</td>
+    <td> Outcome=famsup Predictor=G3</td>
+    <td>0.61</td>
+  </tr>
+  <tr>
+    <td>Model 68</td>
+    <td> LDA</td>
+    <td> Outcome=Paid Predictor=G3</td>
+    <td>0.53</td>
+  </tr>
+  <tr>
+    <td>Model 69</td>
+    <td> LDA</td>
+    <td> Outcome=Activities Predictor=G3</td>
+    <td>0.51</td>
+  </tr>
+  <tr>
+    <td>Model 70</td>
+    <td> LDA</td>
+    <td> Outcome=Nursery Predictor=G3</td>
+    <td>0.79</td>
+  </tr>
+  <tr>
+    <td>Model 71</td>
+    <td> LDA</td>
+    <td> Outcome=Higher Predictor=G3</td>
+    <td>0.95</td>
+  </tr>
+  <tr>
+    <td>Model 72</td>
+    <td> LDA</td>
+    <td> Outcome=Internet Predictor=G3</td>
+    <td>0.83</td>
+  </tr>
+  <tr>
+    <td>Model 73</td>
+    <td> LDA</td>
+    <td> Outcome=Romantic Predictor=G3</td>
+    <td>0.67</td>
+  </tr>
+    </tbody>
+     </table>
+     
+<p><strong>Best Model:</strong> The best model for LDA is Model 71. LDA is able to predict the outcome variable Higher
+95% utilizing the predictor variable of G3. </p>
+
+<h4>R-Output:</h4>
+<pre><code>> mean(lda.class6==higher)
+[1] 0.9493671</code></pre>
+
+
+<img src="lda.png">
+<hr>
+
+
+     <h3><center>Student Performance- Best Model Selection Table</center></h3>
+     
+                  <p>Type in the variable search term below:</p>
+<input type="text" id="myInput30"  placeholder="Search for variable.." title="Type in a variable">  
+  <table class="table" id="myTable30">
+    <thead>
+      <tr>
+    <th>Model</th>
+    <th> Learning Technique</th>
+    <th> Variables Used</th>
+    <th> Coefficient(s)</br> MSE</br> RSQ</br> Adjusted R<sup>2</sup> </br>% VarianceExplained</th>
+    <th>AIC BIC CP</th>
+    <th>F-Statistic</br> p-value</br> TestError</th>
+    </tr>
+    </thead>
+    <tbody>
+  <tr>
+    <td>Model 1</td>
+    <td> Simple Linear Regression</td>
+    <td>Outcome=G3 Predictor=Mjob</td>
+    <td> MjobHealth=2.9945</td>
+    <td> </td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Model 2</td>
+    <td> Multiple Linear Regression</td>
+    <td>Outcome=G3 Predictor= All other Variables</td>
+    <td>Multiple RSquared=0.845 Adjusted R<sup>2</sup>=0.827</td>
+    <td> </td>
+    <td>pvalue=2.2e-16</td>
+  </tr>
+  <tr>
+    <td>Model 3</td>
+    <td> Validation Set Approach LOOCV</td>
+    <td>Outcome=G3 Predictor=All other Variables</td>
+    <td>Minimum MSE=4.074051</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Model 4</td>
+    <td> Subset Model Selection Method=Backward</td>
+    <td>Outcome=G3 Predictors=All other Variables</td>
+    <td>RSQ=0.845 Adjusted R<sup>2</sup>=0.8365</td>
+    <td>BIC=5</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Model 5</td>
+    <td> Tree Based Methods-Random Forest K-Fold CV Approach</td>
+    <td>Outcome=G3 Predictors=All other Variables</td>
+    <td>Minimum MSE=1.951061 %Variance Explained=83.37</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>Model 6</td>
+    <td> Generalized Additive Models Polynomial Regression</td>
+    <td>Outcome=G3 Predictors=Activities Age^7 Famrel Absences^4 G1 G2</td>
+    <td>Multiple RSquared=0.8541 Adjusted R<sup>2</sup>=0.8483</td>
+    <td> </td>
+    <td>pvalue=2.2e-16</td>
+  </tr>
+  <tr>
+    <td>Model 7</td>
+    <td> Logistic Regression</td>
+    <td> Outcome=schoolsup Predictor=G3</td>
+    <td>Logistic %=0.87 Test</td>
+    <td> </td>
+    <td>Error=0.13</td>
+  </tr>
+  <tr>
+    <td>Model 8</td>
+    <td> QDA</td>
+    <td> Outcome=schoolsup Predictor=G3</td>
+    <td>QDA%=0.87 Test</td>
+    <td> </td>
+    <td>Error=0.13</td>
+  </tr>
+  <tr>
+    <td>Model 9</td>
+    <td> LDA</td>
+    <td> Outcome=Higher Predictor=G3</td>
+    <td>LDA %=0.95</td>
+    <td> </td>
+    <td>Test Error=0.05</td>
+  </tr>
+    </tbody>
+     </table>
+     
+     <p><strong>Best Model Chosen:</strong> The best model from all of the models utilized is Model 6 in the Best Model
+Selection Table the GAM model that utilized polynomial regression. The model utilized the least amount
+of significant predictors for a non-linear model. The model also has the highest adjusted r-squared value
+of 0.8483. The p-value is similar to other models, but the variance explained via the r-squared shows this
+model is the best fitting model. The model also allows the best interprability of any of the models via
+charts and graphs that can be understood by the lay person as well. The anova(s) ran helped to show
+which predictors were significant and at what polymonial degree for the GAM polynomial regression
+had the best fit. The charts and graphs that follow are for Model 6 from the Best Model Selection Table. </p>
+
+<hr>
+<h3>Charts and Graphs for Model 6 - Best Model Selection</h3>
+</br>
+</br>
+
+<h4>Chart 1: G3 ~ Activities</h4>
+<img src="img/graph_one.png">
+<h4>Graph 1: G3 ~ Age</h4>
+<img src="img/graph_two.png">
+<h4>Graph 2: G3 ~ Famrel</h4>
+<img src="img/graph_three.png">
+<h4>Graph 3: G3 ~ Absences</h4>
+<img src="img/graph_four.png">
+<h4>Graph 4: G3 ~ G1</h4>
+<img src="img/graph_five.png">
+<h4>Graph 5: G3 ~ G2</h4>
+<img src="img/graph_six.png">
+
+<h4>Summary of Best Model Selection</h4>
+
+<pre><code>> summary(gam.studentperformance5)
+
+Call: gam(formula = G3 ~ activities + poly(age, 7) + famrel + poly(absences, 
+    4) + G1 + G2, data = Student_Performance_Ben_Gonzalez)
+Deviance Residuals:
+    Min      1Q  Median      3Q     Max 
+-8.0215 -0.6436  0.3041  1.0051  3.9303 
+
+(Dispersion Parameter for gaussian family taken to be 3.1839)
+
+    Null Deviance: 8269.909 on 394 degrees of freedom
+Residual Deviance: 1206.708 on 379 degrees of freedom
+AIC: 1596.084 
+
+Number of Local Scoring Iterations: 2 
+
+Anova for Parametric Effects
+                   Df Sum Sq Mean Sq   F value    Pr(>F)    
+activities          1    2.1     2.1    0.6732  0.412438    
+poly(age, 7)        7  331.4    47.3   14.8709 < 2.2e-16 ***
+famrel              1   22.2    22.2    6.9691  0.008635 ** 
+poly(absences, 4)   4  425.1   106.3   33.3750 < 2.2e-16 ***
+G1                  1 5044.9  5044.9 1584.4894 < 2.2e-16 ***
+G2                  1 1237.5  1237.5  388.6663 < 2.2e-16 ***
+Residuals         379 1206.7     3.2                        
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1</code></pre>
+<hr>
+
+<h4>Summary of the Best Model:</h4>
+<p>The most significant predictors for the Student Performance dataset when regressed on G3(final grade) are activitesyes, age, famrel, absences, G1, G2. The adjusted r-squared is 0.85 and is the highest adjusted r-squared out of any model. The p-value for this model is 2.2e-16. The age predictor shows that as age increases the final grade of the individual’s decreases. As absences decrease then G3 increases. As famrel increase then G3 increases. As G1 increases then G3 increases. Finally as G2 increases G3 increases.</p>
+
+<hr>
+<div class="container" id="mystuff">
+
+<ul class="nav" id="mylist">
+  <center>
+    <div class="col-sm-4">
+  <li id="mylist"><a href="mailto:gonzalezben81@gmail.com" class=" btn btn-primary">Contact Me</a></li>
+  </div>
+  <div class="col-sm-4">
+  <li id="mylist"><a href="https://github.com/gonzalezben81"><i style="font-size:48px" class="fa">&#xf09b;</i></a></li> 
+  </div>
+  <div class="col-sm-4">
+  <li id="mylist"><a href="https://m.do.co/c/b72d3479beb8" class=" btn btn-success">$10 Digital Ocean Credit</a></li>
+  </div>
+  </center>
+</ul>
+
+</div>
+
+<hr>
+
+
+</br>
+</br>
+</body>
+</html>
