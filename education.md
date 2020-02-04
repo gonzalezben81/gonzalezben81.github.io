@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Education
-subtitle: Where have I learned?
+subtitle: Where & what have I learned?
 ---
 
 My name is Ben Gonzalez. I currently live in the St. Louis, MO area and work with Rstudio and Shiny products. 
