@@ -1,6 +1,6 @@
 site_name: Gonzalez Analytics
 theme:
-  name: 'material'
+  name: material
   features:
     - navigation.tabs
     - navigation.sections
