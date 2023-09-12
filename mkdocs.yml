@@ -1,6 +1,6 @@
 site_name: Gonzalez Analytics
 theme:
-  name: material
+  name: 'windmill'
   features:
     - navigation.tabs
     - navigation.sections
@@ -24,7 +24,7 @@ theme:
         icon: material/toggle-switch
         name: Switch to light mode    
       primary: teal
-      accent: lime
+      accent: orange
 
 
 extra:
