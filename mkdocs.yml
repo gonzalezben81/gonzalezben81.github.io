@@ -4,6 +4,9 @@ theme:
   features:
     - navigation.tabs
     - navigation.sections
+    ###Make nav bars sticky
+    - navigation.tabs.sticky
+    - navigation.expand
     - toc.integrate
     - navigation.top
     - search.suggest
@@ -16,25 +19,25 @@ theme:
     - scheme: default
       toggle:
         icon: material/toggle-switch-off-outline 
-        name: Switch to dark mode
-      primary: teal
+        name: Darkside Mode
+      primary: orange
       accent: purple 
     - scheme: slate 
       toggle:
         icon: material/toggle-switch
-        name: Switch to light mode    
-      primary: teal
+        name: The force is with you mode    
+      primary: blue
       accent: orange
 
 
 extra:
   social:
     - icon: fontawesome/brands/github-alt
-      link: https://github.com/james-willett
+      link: https://github.com/gonzalezben81
     - icon: fontawesome/brands/twitter
-      link: https://twitter.com/TheJamesWillett
+      link: https://github.com/gonzalezben81
     - icon: fontawesome/brands/linkedin
-      link: https://www.linkedin.com/in/willettjames/
+      link: https://github.com/gonzalezben81
 
 markdown_extensions:
   - pymdownx.highlight:
