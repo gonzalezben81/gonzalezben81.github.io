@@ -1,1 +1,21 @@
-site_name: My Docs
+site_name: Gonzalez Analytics
+theme:
+  name: 'windmill'
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - toc.integrate
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+extra_css:
+  - style.css
+nav:
+  - Home: 'index.md'
+  - Graduate Work: 'graduate-work.md'
+  - AWS CF Templates:
+      - AWS VPC Template: 'aws-vpc-template.md'
+  - About: 'about.md'  
