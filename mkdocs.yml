@@ -1,6 +1,6 @@
 site_name: Gonzalez Analytics
 theme:
-  name: 'windmill'
+  name: 'sandstone'
   features:
     - navigation.tabs
     - navigation.sections
