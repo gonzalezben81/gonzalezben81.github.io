@@ -1,26 +1,30 @@
 site_name: Gonzalez Analytics
+repo_url: https://github.com/gonzalezben81/gonzalezben81.github.io
+
 theme:
-  name: 'sandstone'
+  name: 'material'
+  # prev_next_buttons_location: bottom
+  # collapse_navigation: True
   features:
+    - content.code.copy
     - navigation.tabs
     - navigation.sections
-    ###Make nav bars sticky
     - navigation.tabs.sticky
     - navigation.expand
     - toc.integrate
-    - navigation.top
+    - navigation.bottom
     - search.suggest
     - search.highlight
     - content.tabs.link
     - content.code.annotation
-    - content.code.copy
+    - content.code.select
   language: en
   palette:
     - scheme: default
       toggle:
         icon: material/toggle-switch-off-outline 
         name: Darkside Mode
-      primary: orange
+      primary: lightblue
       accent: purple 
     - scheme: slate 
       toggle:
@@ -42,6 +46,8 @@ extra:
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
   - admonition
@@ -55,6 +61,14 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
+nav:
+  - Introduction: 'index.md'
+  - 'Vault':
+      - 'Vault AWS Connection': 'vault.md'
+      - 'Vault Azure Connection': 'vault-azure.md'
+  - 'About': 'about.md'
+  - 'Issue Tracker': 'https://example.com/'      
 
 copyright: |
   &copy; 2023 <a href="https://github.com/gonzalezben81"  target="_blank" rel="noopener">Ben Gonzalez</a>  
