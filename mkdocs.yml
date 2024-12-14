@@ -72,3 +72,8 @@ nav:
 
 copyright: |
   &copy; 2023 <a href="https://github.com/gonzalezben81"  target="_blank" rel="noopener">Ben Gonzalez</a>  
+
+extra:
+  analytics:
+    provider: google
+    property: G-8HDBCFBC89
